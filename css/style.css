@@ -48,7 +48,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: red;
   text-transform: uppercase;
   backface-visibility: hidden; /* In this case, fix to help with the animation shake bug*/
   margin-bottom: 6rem; /* Margin for white-space */
@@ -138,7 +138,7 @@ body {
 }
 
 .btn--white {
-  background-color: #fff;
+  background-color: red;
   color: #777;
 }
 
@@ -157,7 +157,7 @@ body {
 }
 
 .btn--white::after {
-  background-color: #fff;
+  background-color: red;
 }
 
 .btn:hover::after {
@@ -169,5 +169,3 @@ body {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards; /* Automatically apply the styles before the animation starts (opacity: 0;) */
 }
-
-/*# sourceMappingURL=style.css.map */
