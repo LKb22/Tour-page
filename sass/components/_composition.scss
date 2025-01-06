@@ -1,0 +1,38 @@
+.composition {
+  position: relative; // This is the parent container
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    position: absolute; //Placed according to a reference, which is the parent container
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; //
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      outline: 1.5rem solid $color-primary; //Use instead of border so outline-offset can be used to create a space between the outline and the element
+      transform: scale(1.05) translateY(-.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, .5); // Shadow should get bigger when element gets bigger with transform
+      z-index: 20; // Bring hovered element to the front by adding a higher z-index
+    }
+  }
+
+  &:hover &__photo:not(:hover) { // Select all the photos in the composition that are not being hovered, and shrink them
+    transform: scale(.95);
+  }
+}

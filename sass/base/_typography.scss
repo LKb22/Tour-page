@@ -13,7 +13,7 @@ body {
   backface-visibility: hidden; /* In this case, fix to help with the animation shake bug*/
   margin-bottom: 6rem; /* Margin for white-space */
 
-  &--main {
+  &__main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -28,11 +28,25 @@ body {
     */
   }
 
-  &--sub {
+  &__sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
   }
 }

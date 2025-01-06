@@ -9,7 +9,7 @@
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative; /* Allows for the after pseudo class to be positioned relative to the button */
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
   &:hover {
@@ -53,5 +53,30 @@
   &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards; /* Automatically apply the styles before the animation starts (opacity: 0;) */
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block; // Allows for box-model padding and margin
+    text-decoration: none;
+    border-bottom: .1rem solid $color-primary;
+    padding-bottom: .3rem;
+    transition: all .2s; // All properties will transition over .2 seconds
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15); // X, Y, Blur, Color(rgba allows for transparency)
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15); // X, Y, Blur, Color(rgba allows for transparency)
+    transform: translateY(0);
   }
 }

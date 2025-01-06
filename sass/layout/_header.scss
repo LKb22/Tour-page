@@ -24,3 +24,20 @@
     text-align: center; /* To center the button */
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block; // To make the background color only as wide as the text, instead of the whole line width with block
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  -webkit-background-clip: text; // To clip the background color to the text
+  color: transparent; // To hide the original text in order to show the background color
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; // To add a smooth transition effect
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
