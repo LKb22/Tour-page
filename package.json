@@ -1,0 +1,24 @@
+{
+  "name": "tour-page",
+  "version": "1.0.0",
+  "description": "landing page",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run compile:sass\" \"live-server --no-css-inject\"",
+    "compile:sass": "node-sass sass/main.scss css/style.css --no-source-map -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LKb22/Tour-page.git"
+  },
+  "author": "Luke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LKb22/Tour-page/issues"
+  },
+  "homepage": "https://github.com/LKb22/Tour-page#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "node-sass": "^9.0.0"
+  }
+}
