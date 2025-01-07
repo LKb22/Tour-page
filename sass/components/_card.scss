@@ -27,15 +27,15 @@
       transform: rotateY(180deg); // Rotate the back side by 180 degrees to hide it
 
       &--1 {
-        background-image: $background-gradient-card-1
+        background-image: $background-gradient-secondary
       }
 
       &--2 {
-        background-image: $background-gradient-card-2
+        background-image: $background-gradient-primary
       }
 
       &--3 {
-        background-image: $background-gradient-card-3
+        background-image: $background-gradient-tertiary
       }
     }
 
@@ -60,17 +60,17 @@
     border-top-right-radius: .3rem;
 
     &--1 {
-      background-image: $background-gradient-card-1,
+      background-image: $background-gradient-secondary,
       url(/img/nat-5.jpg);
     }
 
     &--2 {
-      background-image: $background-gradient-card-2,
+      background-image: $background-gradient-primary,
       url(/img/nat-6.jpg);
     }
 
     &--3 {
-      background-image: $background-gradient-card-3,
+      background-image: $background-gradient-tertiary,
       url(/img/nat-7.jpg);
     }
   }

@@ -16,14 +16,14 @@ $color-grey-dark: #777;
 $color-white: white;
 $color-black: black;
 
-// BACKGROUND IMAGE
-$background-gradient-card-1: linear-gradient(to right bottom,
-  $color-secondary-light,
-  $color-secondary-dark);
-$background-gradient-card-2: linear-gradient(to right bottom,
+// BACKGROUND GRADIENTS
+$background-gradient-primary: linear-gradient(to right bottom,
   $color-primary-light,
   $color-primary-dark);
-$background-gradient-card-3: linear-gradient(to right bottom,
+$background-gradient-secondary: linear-gradient(to right bottom,
+  $color-secondary-light,
+  $color-secondary-dark);
+$background-gradient-tertiary: linear-gradient(to right bottom,
   $color-tertiary-light,
   $color-tertiary-dark);
 
