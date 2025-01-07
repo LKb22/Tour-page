@@ -1,20 +1,25 @@
-/* Pseudo classes of the button selector */
+// Pseudo classes of the button selector
 .btn {
+  &, // To add just the button element
   &:link,
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
-    display: inline-block; /* Allows for padding and margin */
+    display: inline-block; // Allows for padding and margin
     border-radius: 10rem;
     transition: all 0.2s;
-    position: relative; /* Allows for the after pseudo class to be positioned relative to the button */
+    position: relative; // Allows for the after pseudo class to be positioned relative to the button
     font-size: $default-font-size;
+
+    // Change for the <button> element
+    border: none; // Remove the default border
+    cursor: pointer;
   }
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.2); /* X, Y, Blur, Color */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2); // X, Y, Blur, Color
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -22,14 +27,16 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none; // Remove the default outline
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
   &--white {
     background-color: $color-white;
-    color: $color-grey-dark;
+    color: $color-grey-dark-1;
 
     &::after {
       background-color: $color-white;
@@ -45,23 +52,23 @@
     }
   }
 
-  /* after pseudo class always requires content and display */
+  // after pseudo class always requires content and display
   &::after {
     content: "";
     display: inline-block;
     height: 100%;
-    width: 100%; /* AS a child of the button, to have the same size */
+    width: 100%; // AS a child of the button, to have the same size
     border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Behind the button */
+    z-index: -1; // Behind the button
     transition: all 0.4s;
   }
 
   &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
-    animation-fill-mode: backwards; /* Automatically apply the styles before the animation starts (opacity: 0;) */
+    animation-fill-mode: backwards; // Automatically apply the styles before the animation starts (opacity: 0;)
   }
 }
 
