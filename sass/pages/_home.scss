@@ -15,7 +15,7 @@
 
   transform: skewY(-7deg);
 
-  // Use the child selector to skew the children back to normal
+  // Use the direct child selector and select all to skew the children back to normal
   & > * {
     transform: skewY(7deg);
   }
@@ -25,4 +25,9 @@
   background-color: $color-grey-light-1;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
+}
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0;
 }

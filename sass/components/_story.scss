@@ -1,0 +1,59 @@
+.story {
+  width: 75%;
+  margin:0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, .6); // To make the background slightly transparent without making the text transparent
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem; // To account for the transform of -3rem in child element
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+  position: relative;
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-hape-outside: circle(50% at 50% 50%); // Safari
+    shape-outside: circle(50% at 50% 50%); // To make the text wrap around the shape
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%); // To make the shape itself circular
+    transform: translateX(-3rem) skewX(12deg); // To move the shape to the left (transform is better than margins, etc. when using float)
+
+  }
+
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4); // To center/move the image to the left ; To scale the image up for the scale down animation on hover
+    backface-visibility: hidden; // To fix animation glitch
+    transition: all .5s;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0; // To hide the text for the iitial state (appears on hover)
+    transition: all .5s;
+    backface-visibility: hidden; // To fix animation glitch
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); // Adds nice filter effects to the image on hover
+  }
+}
