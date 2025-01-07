@@ -1,0 +1,160 @@
+.card {
+  // FUNCTIONALITY
+  // Add perspective on the parent element to enable 3D effects
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative; // Since the child element is absolutely positioned, the parent needs to be relatively positioned
+  height: 52rem; // Set a height to the parent element to give each side a height
+
+  // Add a child element to apply the 3D effect on
+  &__side {
+    height: 52rem;
+    transition: all .8s ease;
+    position: absolute; // To position the 'front' and 'back' sides on top of each other
+    top: 0;
+    left: 0;
+    width: 100%; // To make the sides take up the full width of the parent
+    backface-visibility: hidden; // To hide the back side when the front side is facing the user
+    border-radius: .3rem;
+    overflow: hidden; // To hide the overflow of the image that covered the card's border-radius
+    box-shadow: 0 1.5 4rem $box-shadow-color;
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg); // Rotate the back side by 180 degrees to hide it
+
+      &--1 {
+        background-image: $background-gradient-card-1
+      }
+
+      &--2 {
+        background-image: $background-gradient-card-2
+      }
+
+      &--3 {
+        background-image: $background-gradient-card-3
+      }
+    }
+
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg); // Rotate the front side by 180 degrees to hide it. Rotate negative/in the opposite direction to create the illusion of the card flipping
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0); // Rotate the back side to 0 degrees to show it
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen; // To make the image lighter
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: .3rem; // Clip path might break overflow, so re-set radius to align top corner radiuses of card and image
+    border-top-right-radius: .3rem;
+
+    &--1 {
+      background-image: $background-gradient-card-1,
+      url(/img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: $background-gradient-card-2,
+      url(/img/nat-6.jpg);
+    }
+
+    &--3 {
+      background-image: $background-gradient-card-3,
+      url(/img/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    left: 2rem;
+    width: 75%; // To make the heading take up 75% of the card's width
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem; // To add some space around the text
+    -webkit-box-decoration-break: clone; // To treat the two lines of text as two separate elements (giving the padding to each line)
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: (linear-gradient(to right bottom,
+        rgba($color-secondary-light, .85),
+        rgba($color-secondary-dark, .85)));
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-primary-light, .85),
+        rgba($color-primary-dark, .85));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-tertiary-light, .85),
+        rgba($color-tertiary-dark, .85));
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; //Simplest way to center a block element inside a block element
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: .1rem solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  // BACK SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+}

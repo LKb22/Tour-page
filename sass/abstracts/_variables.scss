@@ -3,10 +3,32 @@ $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
 $color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
 $color-grey-dark: #777;
 $color-white: white;
 $color-black: black;
+
+// BACKGROUND IMAGE
+$background-gradient-card-1: linear-gradient(to right bottom,
+  $color-secondary-light,
+  $color-secondary-dark);
+$background-gradient-card-2: linear-gradient(to right bottom,
+  $color-primary-light,
+  $color-primary-dark);
+$background-gradient-card-3: linear-gradient(to right bottom,
+  $color-tertiary-light,
+  $color-tertiary-dark);
+
+// SHADOW
+$box-shadow-color: rgba($color-black, .15);
 
 // FONT
 $default-font-size: 1.6rem;
