@@ -1,0 +1,150 @@
+.navigation {
+  &__checkbox {
+    display: none; // Hide the checkbox
+  }
+
+  &__button {
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000; // Always on top of background
+    box-shadow: 0 1rem 3rem $box-shadow-color;
+    text-align: center; // Center the burger icon
+    cursor: pointer;
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed; // Doesn't move when scrolling
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient($color-primary-light, $color-primary-dark); // Radial starts in the middle and goes out in all directions
+    z-index: 1000; // Always on top
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1); // Ease-out curve, so it starts fast and slows down at the end
+
+    // transform: scale(80);
+  }
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0; // Move nav opposite of the background
+    z-index: 1500; // Between background and button
+    opacity: 0;
+    width: 0; // To remove the links and their hover effects, which are still there with opacity 0
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.27, 1.55); // Ease-in-out curve, so it starts slow, speeds up, and slows down at the end
+  }
+
+  &__list {
+    @include center;
+    list-style: none;
+    text-align: center;
+    width: 100%; // To center the list
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    &:link, // Unvisited link
+    &:visited { // Visited link
+      display: inline-block; // So padding and transform work
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+      background-size: 250%; // Increased to make sure that only the first half/transparent part is visible, a bit more than double/200% to account for 120deg
+      transition: all .4s;
+
+      span {
+        margin-right: 1.5rem;
+        display: inline-block; // So number and text are on the same line
+      }
+    }
+
+    &:hover, // Mouse over link
+    &:active { // Mouse click on link
+      background-position: 100%; // Move the background to the right so only the second half/white part is visible
+      color: $color-primary;
+      transform: translateX(1rem); // Move slightly to the right on hover
+    }
+  }
+
+  // FUNCTIONALITY
+  &__checkbox:checked ~ &__background { // When the checkbox is checked, change the background
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav { // When the checkbox is checked, reveal the navigation
+    opacity: 1;
+    width: 100%;
+  }
+
+  // ICON
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem; // Move the icon down a bit
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block; // Treat as inline elements and allow for block-level properties like width and height, padding and margin
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before {
+      top: -.8rem;
+      // transform-origin: left; // Rotate around the left edge
+    }
+
+    &::after {
+      top: .8rem;
+    }
+  }
+
+  // On hover, move the icon before up and after down
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  // When the checkbox is checked, select adjacent button then sibling icon (middle line) and hide it
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent; // Hide instead of removing/changing size to avoid effecting the other lines
+  }
+
+  // Rotate the before and after lines to form an X and set the top to 0 to center them
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
