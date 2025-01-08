@@ -15,7 +15,7 @@
     left: 0;
     width: 100%; // To make the sides take up the full width of the parent
     backface-visibility: hidden; // To hide the back side when the front side is facing the user
-    border-radius: .3rem;
+    border-radius: 3px;
     overflow: hidden; // To hide the overflow of the image that covered the card's border-radius
     box-shadow: 0 1.5 4rem $box-shadow-color;
 
@@ -133,7 +133,7 @@
 
   // BACK SIDE STYLING
   &__cta {
-    @include center;
+    @include absCenter;
     width: 90%;
     text-align: center;
   }
