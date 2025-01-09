@@ -7,25 +7,37 @@
 }
 
 html {
-  font-size: 62.5%; /* Defines 1 rem. Set default 16px to 10px = 62.5% (always use %, not px) so 1rem = 10px. Setting universal size for responsive design/media queries */
+  // Setting universal size for responsive design/media queries
+  font-size: 62.5%; // Defines 1 rem. 1rem = 10px (Set default 16px to 10px = 62.5% (always use %, not px)).
+
+  // Desktop first: From largest to smallest so that the declaration of the last media query that applies to the given browser width will be the one that is used (since it appears last in the stylesheet)
+
+  @include respond(big-desktop) { // if width > 1800px?
+    font-size: 75%; // 1rem = 12px, 12px/16px = 75%
+  }
+
+  @include respond(tab-land) { // if width =< 1200px?
+    font-size: 56.25%; // 1rem = 9px, 9px/16px = 56.25%
+  }
+
+  @include respond(tab-port) { // if width =< 900px?
+    font-size: 50%; // 1rem = 8px, 8px/16px = 50%
+  }
+
+  /*
+  We don't need this one because we won't go below 50% / 8px font-size and we are using desktop first max-width media queries
 
   @include respond(phone) {
-    font-size: 50%; /* 1rem = 8px */
+    font-size: %;
   }
-
-  @include respond(tab-port) {
-    font-size: 60%; /* 1rem = 8px */
-  }
-
-  @include respond(tab-land) {
-    font-size: 70%; /* 1rem = 8px */
-  }
-
-  @include respond(big-desktop) {
-    font-size: 80%; /* 1rem = 8px */
-  }
+  */
 }
 
 body {
-  box-sizing: border-box; /* Allows for padding and border to be included in the width */
+  box-sizing: border-box; // Allows for padding and border to be included in the width
+  padding: 3rem; // Border around the whole edge of the page
+
+  @include respond(tab-port) {
+    padding: 0rem; // Remove padding starting at 900px
+  }
 }

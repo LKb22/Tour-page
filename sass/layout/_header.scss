@@ -7,6 +7,11 @@
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
   &__logo-box {
     position: absolute;
     top: 4rem;
@@ -38,6 +43,14 @@
   color: transparent; // To hide the original text in order to show the background color
   letter-spacing: 0.2rem;
   transition: all 0.2s; // To add a smooth transition effect
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
