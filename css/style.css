@@ -1,3 +1,11 @@
+/*
+0 - 600px:     Phone (phone)
+600 - 900px:   Tablet portrait (tab-port)
+900 - 1200px:  Tablet landscape (tab-land)
+[1200 - 1800]: Where our normal styles apply
+1800px + :     Big Desktop (big-desktop)
+*/
+/* Use em for media queries, not px. 1em = 16px. max/min-width: xpx / 16px = yem */
 /* Browser is optimized for opacity and transform with keyframes */
 @keyframes moveInLeft {
   0% {
@@ -37,6 +45,22 @@
 html {
   font-size: 62.5%;
   /* Defines 1 rem. Set default 16px to 10px = 62.5% (always use %, not px) so 1rem = 10px. Setting universal size for responsive design/media queries */ }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 50%;
+      /* 1rem = 8px */ } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 60%;
+      /* 1rem = 8px */ } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 70%;
+      /* 1rem = 8px */ } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 80%;
+      /* 1rem = 8px */ } }
 
 body {
   box-sizing: border-box;

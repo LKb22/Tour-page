@@ -8,6 +8,22 @@
 
 html {
   font-size: 62.5%; /* Defines 1 rem. Set default 16px to 10px = 62.5% (always use %, not px) so 1rem = 10px. Setting universal size for responsive design/media queries */
+
+  @include respond(phone) {
+    font-size: 50%; /* 1rem = 8px */
+  }
+
+  @include respond(tab-port) {
+    font-size: 60%; /* 1rem = 8px */
+  }
+
+  @include respond(tab-land) {
+    font-size: 70%; /* 1rem = 8px */
+  }
+
+  @include respond(big-desktop) {
+    font-size: 80%; /* 1rem = 8px */
+  }
 }
 
 body {
