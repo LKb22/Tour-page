@@ -111,7 +111,7 @@
         padding: 3rem 5rem;
 
         .btn--green {
-          align-self: flex-end;
+          align-self: flex-end; // Align the button to the right (right now its to the left because of flex-start)
         }
       }
 
