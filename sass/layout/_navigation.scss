@@ -38,7 +38,8 @@
     left: 0; // Move nav opposite of the background
     z-index: 1500; // Between background and button
     opacity: 0;
-    width: 0; // To remove the links and their hover effects, which are still there with opacity 0
+    visibility: hidden; // Hide the navigation initially
+    width: 0; // Start with width 0 and animate it to 100% for a slide in effect
     transition: all .8s cubic-bezier(0.68, -0.55, 0.27, 1.55); // Ease-in-out curve, so it starts slow, speeds up, and slows down at the end
   }
 
@@ -88,6 +89,7 @@
 
   &__checkbox:checked ~ &__nav { // When the checkbox is checked, reveal the navigation
     opacity: 1;
+    visibility: visible;
     width: 100%;
   }
 
