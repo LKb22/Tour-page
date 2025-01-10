@@ -15,10 +15,10 @@
 
   // Responsive image in CSS
   // 192 dots per inch is resolution of apple retina display, often used as reference for high resolution displays. Puls, if display width below 600px, don't need to load the high resolution image/can use the smaller image (small image is 1200px wide). OR, if display width is above 2000px, load the high resolution image (large image is 2000px wide). Use em instead of px for better scalability.
-  @media (min-resolution: 192dpi) and (min-width: 37.5em),
-    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // For Safari
-    (min-width: 125em) {
-    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // For Safari
+    only screen and (min-width: 125em) {
+      background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
   }
 
   @include respond(phone) {
