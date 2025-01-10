@@ -14,6 +14,7 @@
     top: 0;
     left: 0;
     width: 100%; // To make the sides take up the full width of the parent
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; // To hide the back side when the front side is facing the user
     border-radius: 3px;
     overflow: hidden; // To hide the overflow of the image that covered the card's border-radius

@@ -20,5 +20,8 @@
   "devDependencies": {
     "concurrently": "^9.1.2",
     "node-sass": "^9.0.0"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
   }
 }

@@ -1,13 +1,23 @@
 .header {
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top center;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+
+  // Feature query
+  // If clip-path or -webkit-clip-path is supported, then apply the clip-path style.
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
 
   // Responsive image in CSS
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) { // 192 dots per inch is resolution of apple retina display, often used as reference for high resolution displays. Puls, if display width below 600px, don't need to load the high resolution image/can use the smaller image (small image is 1200px wide). OR, if display width is above 2000px, load the high resolution image (large image is 2000px wide). Use em instead of px for better scalability.
+  // 192 dots per inch is resolution of apple retina display, often used as reference for high resolution displays. Puls, if display width below 600px, don't need to load the high resolution image/can use the smaller image (small image is 1200px wide). OR, if display width is above 2000px, load the high resolution image (large image is 2000px wide). Use em instead of px for better scalability.
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // For Safari
+    (min-width: 125em) {
     background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
   }
 

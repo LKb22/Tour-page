@@ -1,0 +1,3 @@
+# Ignore resized images folder
+./img/images
+./img/resized
