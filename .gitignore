@@ -1,3 +1,23 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore build folders
+dist/
+build/
+img/resized/
+
+# Ignore log and temporary files
+*.log
+*.tmp
+
+# Ignore generated CSS files
+css/style.comp.css
+css/style.concat.css
+css/style.prefix.css
+
+# Ignore other auto-generated files (like in 'tmp' folder)
+tmp/
+
 # Ignore resized images folder
 img/images/
 img/resized/
