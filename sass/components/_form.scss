@@ -6,7 +6,7 @@
   }
 
   &__input {
-    font-size:1.5;
+    font-size: 1rem;
     font-family: inherit; // Inherit font-family from body
     color: inherit; // Inherit color from body
     padding: 1.5rem 2rem;
@@ -18,7 +18,7 @@
     display: block; //To make it take up its own line
     transition: all .3s;
 
-    @include respond(tab-port) {
+    @include respond(tablet-portrait) {
       width: 100%;
     }
 
@@ -57,7 +57,7 @@
     width: 49%;
     display: inline-block; // To make the radio buttons sit next to each other with no line break
 
-    @include respond(tab-port) {
+    @include respond(tablet-portrait) {
       width: 100%;
       margin-bottom: 2rem;
     }

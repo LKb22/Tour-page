@@ -16,7 +16,7 @@
     text-align: center; // Center the burger icon
     cursor: pointer;
 
-    @include respond(tab-port) {
+    @include respond(tablet-portrait) {
       top: 4rem;
       right: 4rem;
     }
@@ -40,7 +40,7 @@
 
     // transform: scale(80);
 
-    @include respond(tab-port) {
+    @include respond(tablet-portrait) {
       top: 4.5rem;
       right: 4.5rem;
     }

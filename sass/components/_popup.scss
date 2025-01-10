@@ -96,7 +96,7 @@
     }
   }
 
-  @include respond(tab-port) {
+  @include respond(tablet-portrait) {
     .popup {
       &__content {
         display: flex;

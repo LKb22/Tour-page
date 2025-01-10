@@ -58,7 +58,7 @@
   letter-spacing: 0.2rem;
   transition: all 0.2s; // To add a smooth transition effect
 
-  @include respond(tab-port) {
+  @include respond(tablet-portrait) {
     font-size: 3rem;
   }
 

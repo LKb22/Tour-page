@@ -4,7 +4,7 @@
   font-size: 1.4rem;
   color: $color-grey-light-1;
 
-  @include respond(tab-port) {
+  @include respond(tablet-portrait) {
     padding: 8rem 0;
   }
 
@@ -12,7 +12,7 @@
     text-align: center; // Image is inline-element, so behaves like text
     margin-bottom: 8rem;
 
-    @include respond(tab-port) {
+    @include respond(tablet-portrait) {
       margin-bottom: 6rem;
     }
   }
@@ -27,7 +27,7 @@
     padding-top: 2rem;
     display: inline-block; //So the line doesn't take the full width
 
-    @include respond(tab-port) {
+    @include respond(tablet-portrait) {
       width: 100%;
       text-align: center;
     }
@@ -70,7 +70,7 @@
     width: 80%;
     float: right;
 
-    @include respond(tab-port) {
+    @include respond(tablet-portrait) {
       width: 100%;
       float: none;
     }

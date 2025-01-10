@@ -156,7 +156,7 @@
     font-weight: 100;
   }
 
-  // @include respond(tab-port) {
+  // @include respond(tablet-portrait) {
 
     @media only screen and (max-width: 56.25em),
       only screen and (hover: none) {  // Use original media query instead of mixin to add multiple conditions. If scscreen smaller than 900 AND no hover, then apply the following styles

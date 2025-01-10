@@ -16,35 +16,59 @@
 // Media Queries
 // ORDER: base + typography > general layout + grid > page layout > components
 
-// MEDIA QUERY MANAGER
-/*
-0 - 600px:     Phone (phone)
-600 - 900px:   Tablet portrait (tab-port)
-900 - 1200px:  Tablet landscape (tab-land)
-[1200 - 1800]: Where our normal styles apply
-1800px + :     Big Desktop (big-desktop)
-*/
+$mobile-sm: 20em; // 320 x 568 (16:9 typical on small smartphones)
+$mobile-lg: 25.875em; // 414 x 896 (19.5:9 typical on large smartphones)
+$phone: 37.5em; // 600 x 800 (3:4, typical for phones)
+$tablet-portrait: 48em; // 768 x 1024 (3:4, typical for tablets in portrait mode)
+$tablet-landscape: 62em; // 992 x 744 (covers tablets in landscape mode distinctly)
+$laptop-small: 64em; // 1024 x 768 (4:3, typical for small laptops)
+$laptop: 85.375em; // 1366 x 768 (16:9, typical for standard laptops)
+$laptop-large: 90em; // 1440 x 900 (16:10, typical for large laptops)
+$desktop-small: 100em; // 1600 x 900 (16:9, typical for small desktops)
+$desktop: 112.5em; // 1800 x 900 (2:1, typical for desktops)
+$desktop-medium: 120em; // 1920 x 1080 (16:9, typical for medium desktops)
+$desktop-large: 160em; // 2560 x 1080 (21:9, typical for large desktops)
+$monitor-ultrawide: 215em; // 3440 x 1440 (21:9, typical for ultrawide monitors)
 
 // Use em for media queries, not px. 1em = 16px. max/min-width: xpx / 16px = yem
 @mixin respond($breakpoint) {
+  @if $breakpoint == mobile-sm {
+    @media only screen and (max-width: #{$mobile-sm}) { @content; }
+  }
+  @if $breakpoint == mobile-lg {
+    @media only screen and (max-width: #{$mobile-lg}) { @content; }
+  }
   @if $breakpoint == phone {
-    @media only screen and (max-width: 37.5em) {  // 600px
-      @content;
-    }
+    @media only screen and (max-width: #{$phone}) { @content; }
   }
-  @if $breakpoint == tab-port {
-    @media only screen and (max-width: 56.25em) {  // 900px
-      @content;
-    }
+  @if $breakpoint == tablet-portrait {
+    @media only screen and (max-width: #{$tablet-portrait}) { @content; }
   }
-  @if $breakpoint == tab-land {
-    @media only screen and (max-width: 75em) {  // 1200px
-      @content;
-    }
+  @if $breakpoint == tablet-landscape {
+    @media only screen and (max-width: #{$tablet-landscape}) { @content; }
   }
-  @if $breakpoint == big-desktop {
-    @media only screen and (min-width: 112.5em) {  // 1800px
-      @content;
-    }
+  @if $breakpoint == laptop-small {
+    @media only screen and (max-width: #{$laptop-small}) { @content; }
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: #{$laptop}) { @content; }
+  }
+  @if $breakpoint == laptop-large {
+    @media only screen and (max-width: #{$laptop-large}) { @content; }
+  }
+  @if $breakpoint == desktop-small {
+    @media only screen and (max-width: #{$desktop-small}) { @content; }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: #{$desktop}) { @content; }
+  }
+  @if $breakpoint == desktop-medium {
+    @media only screen and (max-width: #{$desktop-medium}) { @content; }
+  }
+  @if $breakpoint == desktop-large {
+    @media only screen and (max-width: #{$desktop-large}) { @content; }
+  }
+  @if $breakpoint == monitor-ultrawide {
+    @media only screen and (min-width: #{$monitor-ultrawide}) { @content; }
   }
 }
