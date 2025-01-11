@@ -5,12 +5,12 @@
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
+    padding: 1.19rem 3.17rem;
     display: inline-block; // Allows for padding and margin
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative; // Allows for the after pseudo class to be positioned relative to the button
-    font-size: $default-font-size;
+    font-size: 1.27rem;
 
     // Change for the <button> element
     border: none; // Remove the default border
@@ -19,7 +19,7 @@
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.2); // X, Y, Blur, Color
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -75,13 +75,13 @@
 .btn-text {
   &:link,
   &:visited {
-    font-size: $default-font-size;
+    font-size: 1.27rem;
     color: $color-primary;
     display: inline-block; // Allows for box-model padding and margin
     text-decoration: none;
-    border-bottom: .1rem solid $color-primary;
-    padding-bottom: .3rem;
-    transition: all .2s; // All properties will transition over .2 seconds
+    border-bottom: 1px solid $color-primary;
+    padding-bottom: .24rem;
+    transition: all 0.2s; // All properties will transition over .2 seconds
   }
 
   &:hover {

@@ -1,21 +1,20 @@
 .form {
 
   &__group:not(:last-child) {
-    margin-bottom: 2rem;
-
+    margin-bottom: 1.58rem;
   }
 
   &__input {
-    font-size: 1rem;
-    font-family: inherit; // Inherit font-family from body
-    color: inherit; // Inherit color from body
-    padding: 1.5rem 2rem;
+    font-size: 0.79rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.19rem 1.58rem;
     border-radius: 2px;
     background-color: rgba($color-white, 0.5);
     border: none;
-    border-bottom: 3px solid transparent; // Add border-bottom so the second button does not get pushed down when the first is in focus
+    border-bottom: 3px solid transparent;
     width: 90%;
-    display: block; //To make it take up its own line
+    display: block;
     transition: all .3s;
 
     @include respond(tablet-portrait) {
@@ -28,34 +27,33 @@
       border-bottom: 3px solid $color-primary;
     }
 
-    &:focus:invalid { // When focused and invalid, apply styling
+    &:focus:invalid {
       border-bottom: 3px solid $color-secondary-dark;
     }
 
-    &::-webkit-input-placeholder { // Pseudo element for the placeholder
+    &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
   }
 
   &__label {
-    font-size:1.2rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    margin-left:2rem;
-    margin-top: .7rem;
-    display: block; // To use the box model properties
+    margin-left: 1.58rem;
+    margin-top: .55rem;
+    display: block;
     transition: all .3s;
   }
 
-  // Use placeholder-shown pseudoclass to say, when the placeholder is shown, hide the label (once you start typing, the styling to hide will be removed)
-  &__input:placeholder-shown + &__label { // + for adjacent sibling selector (sibling has to be after in html (input then label), ~ for general sibling selector
+  &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-4rem);
+    transform: translateY(-3.17rem);
   }
 
   &__radio-group {
     width: 49%;
-    display: inline-block; // To make the radio buttons sit next to each other with no line break
+    display: inline-block;
 
     @include respond(tablet-portrait) {
       width: 100%;
@@ -63,32 +61,32 @@
     }
   }
 
-&__radio-input {
-    display: none; // To hide the original html radio button
+  &__radio-input {
+    display: none;
   }
 
   &__radio-label {
     font-size: $default-font-size;
     cursor: pointer;
     position: relative;
-    padding-left: 5rem; // To make room for the radio button
+    padding-left: 3.96rem;
   }
 
   &__radio-button {
-    height: 3rem;
-    width: 3rem;
-    border: 5px solid $color-primary;
+    height: 2.38rem;
+    width: 2.38rem;
+    border: 3.96px solid $color-primary;
     border-radius: 50%;
-    display: inline-block; // To make it sit next to the label
+    display: inline-block;
     position: absolute;
-    top: -.4rem; // To center the radio button
+    top: -.32rem;
     left: 0;
 
-    &::after { // Pseudo element to create the inner circle
-      content: ''; // To create an empty element
+    &::after {
+      content: '';
       display: block;
-      height: 1.3rem;
-      width: 1.3rem;
+      height: 1.03rem;
+      width: 1.03rem;
       border-radius: 50%;
       @include absCenter;
       background-color: $color-primary;
@@ -97,7 +95,6 @@
     }
   }
 
-  // Use pseudo class checked to capture when radio input is 'checked'. Select sibling radio-label then child radio-button and change opacity to 1 to show the inner circle styled using the after pseudo element
   &__radio-input:checked + &__radio-label &__radio-button::after {
     opacity: 1;
   }

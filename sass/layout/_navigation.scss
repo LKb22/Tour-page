@@ -1,53 +1,51 @@
 .navigation {
   &__checkbox {
-    display: none; // Hide the checkbox
+    display: none;
   }
 
   &__button {
     background-color: $color-white;
-    height: 7rem;
-    width: 7rem;
+    height: 5.55rem; // Adjusted height
+    width: 5.55rem; // Adjusted width
     position: fixed;
-    top: 6rem;
-    right: 6rem;
+    top: 4.76rem; // Adjusted top position
+    right: 4.76rem; // Adjusted right position
     border-radius: 50%;
-    z-index: 2000; // Always on top of background
+    z-index: 2000;
     box-shadow: 0 1rem 3rem $box-shadow-color;
-    text-align: center; // Center the burger icon
+    text-align: center;
     cursor: pointer;
 
     @include respond(tablet-portrait) {
-      top: 4rem;
-      right: 4rem;
+      top: 3.17rem;
+      right: 3.17rem;
     }
 
     @include respond(phone) {
-      top: 3rem;
-      right: 3rem;
+      top: 2.38rem;
+      right: 2.38rem;
     }
   }
 
   &__background {
-    height: 6rem;
-    width: 6rem;
+    height: 4.76rem; // Adjusted height
+    width: 4.76rem; // Adjusted width
     border-radius: 50%;
-    position: fixed; // Doesn't move when scrolling
-    top: 6.5rem;
-    right: 6.5rem;
-    background-image: radial-gradient($color-primary-light, $color-primary-dark); // Radial starts in the middle and goes out in all directions
-    z-index: 1000; // Always on top
-    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1); // Ease-out curve, so it starts fast and slows down at the end
-
-    // transform: scale(80);
+    position: fixed;
+    top: 5.16rem; // Adjusted top position
+    right: 5.16rem; // Adjusted right position
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    z-index: 1000;
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 
     @include respond(tablet-portrait) {
-      top: 4.5rem;
-      right: 4.5rem;
+      top: 3.57rem;
+      right: 3.57rem;
     }
 
     @include respond(phone) {
-      top: 3.5rem;
-      right: 3.5rem;
+      top: 2.78rem;
+      right: 2.78rem;
     }
   }
 
@@ -55,19 +53,19 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0; // Move nav opposite of the background
-    z-index: 1500; // Between background and button
+    left: 0;
+    z-index: 1500;
     opacity: 0;
-    visibility: hidden; // Hide the navigation initially
-    width: 0; // Start with width 0 and animate it to 100% for a slide in effect
-    transition: all .8s cubic-bezier(0.68, -0.55, 0.27, 1.55); // Ease-in-out curve, so it starts slow, speeds up, and slows down at the end
+    visibility: hidden;
+    width: 0;
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
 
   &__list {
     @include absCenter;
     list-style: none;
     text-align: center;
-    width: 100%; // To center the list
+    width: 100%;
   }
 
   &__item {
@@ -75,56 +73,54 @@
   }
 
   &__link {
-    &:link, // Unvisited link
-    &:visited { // Visited link
-      display: inline-block; // So padding and transform work
-      font-size: 3rem;
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 2.38rem; // Adjusted font size
       font-weight: 300;
-      padding: 1rem 2rem;
+      padding: 0.79rem 1.58rem; // Adjusted padding
       color: $color-white;
       text-decoration: none;
       text-transform: uppercase;
       background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
-      background-size: 250%; // Increased to make sure that only the first half/transparent part is visible, a bit more than double/200% to account for 120deg
+      background-size: 250%;
       transition: all .4s;
 
       span {
-        margin-right: 1.5rem;
-        display: inline-block; // So number and text are on the same line
+        margin-right: 1.19rem; // Adjusted margin-right
+        display: inline-block;
       }
     }
 
-    &:hover, // Mouse over link
-    &:active { // Mouse click on link
-      background-position: 100%; // Move the background to the right so only the second half/white part is visible
+    &:hover,
+    &:active {
+      background-position: 100%;
       color: $color-primary;
-      transform: translateX(1rem); // Move slightly to the right on hover
+      transform: translateX(1rem);
     }
   }
 
-  // FUNCTIONALITY
-  &__checkbox:checked ~ &__background { // When the checkbox is checked, change the background
+  &__checkbox:checked ~ &__background {
     transform: scale(80);
   }
 
-  &__checkbox:checked ~ &__nav { // When the checkbox is checked, reveal the navigation
+  &__checkbox:checked ~ &__nav {
     opacity: 1;
     visibility: visible;
     width: 100%;
   }
 
-  // ICON
   &__icon {
     position: relative;
-    margin-top: 3.5rem; // Move the icon down a bit
+    margin-top: 2.78rem; // Adjusted margin-top
 
     &,
     &::before,
     &::after {
-      width: 3rem;
-      height: 2px;
+      width: 2.38rem; // Adjusted width
+      height: 1.58px; // Adjusted height
       background-color: $color-grey-dark-3;
-      display: inline-block; // Treat as inline elements and allow for block-level properties like width and height, padding and margin
+      display: inline-block;
     }
 
     &::before,
@@ -136,16 +132,14 @@
     }
 
     &::before {
-      top: -.8rem;
-      // transform-origin: left; // Rotate around the left edge
+      top: -0.63rem; // Adjusted top position
     }
 
     &::after {
-      top: .8rem;
+      top: 0.63rem; // Adjusted top position
     }
   }
 
-  // On hover, move the icon before up and after down
   &__button:hover &__icon::before {
     top: -1rem;
   }
@@ -154,12 +148,10 @@
     top: 1rem;
   }
 
-  // When the checkbox is checked, select adjacent button then sibling icon (middle line) and hide it
   &__checkbox:checked + &__button &__icon {
-    background-color: transparent; // Hide instead of removing/changing size to avoid effecting the other lines
+    background-color: transparent;
   }
 
-  // Rotate the before and after lines to form an X and set the top to 0 to center them
   &__checkbox:checked + &__button &__icon::before {
     top: 0;
     transform: rotate(135deg);

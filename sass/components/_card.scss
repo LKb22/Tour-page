@@ -18,7 +18,7 @@
     backface-visibility: hidden; // To hide the back side when the front side is facing the user
     border-radius: 3px;
     overflow: hidden; // To hide the overflow of the image that covered the card's border-radius
-    box-shadow: 0 1.5 4rem $box-shadow-color;
+    box-shadow: 0 1.5rem 4rem $box-shadow-color;
 
     &--front {
       background-color: $color-white;
@@ -39,7 +39,6 @@
         background-image: $background-gradient-tertiary
       }
     }
-
   }
 
   &:hover &__side--front {
@@ -57,8 +56,8 @@
     background-blend-mode: screen; // To make the image lighter
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    border-top-left-radius: .3rem; // Clip path might break overflow, so re-set radius to align top corner radiuses of card and image
-    border-top-right-radius: .3rem;
+    border-top-left-radius: 3px; // Clip path might break overflow, so re-set radius to align top corner radiuses of card and image
+    border-top-right-radius: 3px;
 
     &--1 {
       background-image: $background-gradient-secondary,
@@ -77,19 +76,19 @@
   }
 
   &__heading {
-    font-size: 2.8rem;
+    font-size: 2.22rem;
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
     color: $color-white;
     position: absolute;
-    top: 12rem;
-    left: 2rem;
+    top: 9.51rem;
+    left: 1.58rem;
     width: 75%; // To make the heading take up 75% of the card's width
   }
 
   &__heading-span {
-    padding: 1rem 1.5rem; // To add some space around the text
+    padding: 0.79rem 1.19rem; // To add some space around the text
     -webkit-box-decoration-break: clone; // To treat the two lines of text as two separate elements (giving the padding to each line)
     box-decoration-break: clone;
 
@@ -113,7 +112,7 @@
   }
 
   &__details {
-    padding: 3rem;
+    padding: 2.38rem;
 
     ul {
       list-style: none;
@@ -142,17 +141,16 @@
   &__price-box {
     text-align: center;
     color: $color-white;
-    margin-bottom: 8rem;
-
+    margin-bottom: 6.34rem;
   }
 
   &__price-only {
-    font-size: 1.4rem;
+    font-size: 1.11rem;
     text-transform: uppercase;
   }
 
   &__price-value {
-    font-size: 6rem;
+    font-size: 4.75rem;
     font-weight: 100;
   }
 
@@ -190,7 +188,7 @@
       left: 0;
       transform: translate(0);
       width: 100%;
-      padding: 7rem 4rem 4rem 4rem;
+      padding: 5.56rem 3.17rem 3.17rem 3.17rem;
     }
 
     &__price-box {

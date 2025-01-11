@@ -1,19 +1,19 @@
 .feature-box {
   background-color: rgba($color-white, 0.8);
-  font-size: 1.5rem;
-  padding: 2.5rem;
+  font-size: 1.19rem;
+  padding: 1.98rem;
   text-align: center;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+  box-shadow: 0 1.19rem 3.17rem rgba($color-black, .15);
   transition: transform 0.2s;
 
   @include respond(tablet-portrait) {
-    padding: 2rem;
+    padding: 1.58rem;
   }
 
   &__icon {
-    font-size: 6rem;
-    margin-bottom: .5rem;
+    font-size: 4.75rem;
+    margin-bottom: 0.4rem;
     display: inline-block;
     background-image: linear-gradient(to right,
       $color-primary-light,
@@ -27,6 +27,6 @@
   }
 
   &:hover {
-    transform: translateY(-1.5rem) scale(1.03);
+    transform: translateY(-1.19rem) scale(1.03);
   }
 }

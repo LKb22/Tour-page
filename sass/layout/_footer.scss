@@ -1,7 +1,7 @@
 .footer {
   background-color: $color-grey-dark-3;
-  padding: 10rem 0;
-  font-size: 1.4rem;
+  padding: 7.93rem 0;
+  font-size: 1.11rem;
   color: $color-grey-light-1;
 
   @include respond(tablet-portrait) {
@@ -9,8 +9,8 @@
   }
 
   &__logo-box {
-    text-align: center; // Image is inline-element, so behaves like text
-    margin-bottom: 8rem;
+    text-align: center;
+    margin-bottom: 6.34rem;
 
     @include respond(tablet-portrait) {
       margin-bottom: 6rem;
@@ -18,14 +18,14 @@
   }
 
   &__logo {
-    width: 15rem;
+    width: 11.9rem;
     height: auto;
   }
 
   &__navigation {
     border-top: 1px solid $color-grey-dark-1;
-    padding-top: 2rem;
-    display: inline-block; //So the line doesn't take the full width
+    padding-top: 1.58rem;
+    display: inline-block;
 
     @include respond(tablet-portrait) {
       width: 100%;
@@ -38,10 +38,10 @@
   }
 
   &__item {
-    display: inline-block; // To put items in a row
+    display: inline-block;
 
     &:not(:last-child) {
-      margin-right: 1.5rem;
+      margin-right: 1.19rem;
     }
   }
 
@@ -52,7 +52,7 @@
       background-color: $color-grey-dark-3;
       text-decoration: none;
       text-transform: uppercase;
-      display: inline-block; // To make the link a block element
+      display: inline-block;
       transition: all .2s;
     }
 
@@ -66,7 +66,7 @@
 
   &__copyright {
     border-top: 1px solid $color-grey-dark-1;
-    padding-top: 2rem;
+    padding-top: 1.58rem;
     width: 80%;
     float: right;
 

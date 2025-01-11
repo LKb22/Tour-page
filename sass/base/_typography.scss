@@ -10,13 +10,13 @@ body {
   color: $color-white;
   text-transform: uppercase;
   backface-visibility: hidden; /* In this case, fix to help with the animation shake bug*/
-  margin-bottom: 6rem; /* Margin for white-space */
+  margin-bottom: 4.76rem; /* Margin for white-space */
 
   &__main {
     display: block;
-    font-size: 6rem;
+    font-size: 4.76rem;
     font-weight: 400;
-    letter-spacing: 3.5rem;
+    letter-spacing: 2.77rem;
     /* Animation-name and -duration are the only two properties required for animation to work */
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -34,9 +34,9 @@ body {
 
   &__sub {
     display: block;
-    font-size: 2rem;
+    font-size: 1.59rem;
     font-weight: 700;
-    letter-spacing: 1.75rem;
+    letter-spacing: 1.39rem;
     animation: moveInRight 1s ease-out;
 
     @include respond(phone) {
@@ -46,15 +46,15 @@ body {
 }
 
 .heading-tertiary {
-  font-size: $default-font-size;
+  font-size: 1.27rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .paragraph {
-  font-size: $default-font-size;
+  font-size: 1.27rem;
 
   &:not(:last-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2.38rem;
   }
 }

@@ -1,5 +1,5 @@
 .popup {
-  height:100vh;
+  height: 100vh;
   width: 100%;
   position: fixed;
   top: 0;
@@ -12,23 +12,23 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 
-  // Feature Query
   @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba($color-black, .3);
   }
+
   &__content {
     @include absCenter;
     width: 75%;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem $box-shadow-color;
     border-radius: 3px;
-    display: table; // Create a table layout to make left and right table cells to simulate the same height
-    overflow: hidden; // Hide image overflow covering border-radius
-    opacity: 0; // Start with opacity 0 and animate it to 1 for a fade in effect
-    transform: translate(-50%, -50%) scale(.25); // We can only use transform once in each block, so we need to combine transform: translate and scale here.
-    transition: all .5s .2s; // Animate the popup opening and closing, with .2s delay to make it look like the content is animating after the background
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);
+    transition: all .5s .2s;
   }
 
   &__left {
@@ -39,8 +39,8 @@
   &__right {
     width: 66.666666666%;
     display: table-cell;
-    vertical-align: middle; // Vertically center the content
-    padding: 3rem 5rem;
+    vertical-align: middle;
+    padding: 2.38rem 3.96rem;
   }
 
   &__img {
@@ -49,30 +49,26 @@
   }
 
   &__text {
-    font-size: 1.4rem;
-    margin-bottom: 4rem;
-
+    font-size: 1.11rem;
+    margin-bottom: 3.17rem;
     -moz-column-count: 2;
-    -moz-column-gap: 4rem;
+    -moz-column-gap: 3.17rem;
     -moz-column-rule: 1px solid $color-grey-light-2;
-
-    column-count: 2; // Create two columns of text
-    column-gap: 4rem; // 1em would be 14px in this case
-    column-rule: 1px solid $color-grey-light-2; // Add a vertical line between columns
-
+    column-count: 2;
+    column-gap: 3.17rem;
+    column-rule: 1px solid $color-grey-light-2;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-    -webkit-hyphens: auto;;
-    hyphens: auto; // Hyphenate words automatically if they don't fit
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
 
-  // Open states
-  &:target { // using the id popup in html, and adding the id to the buttons' hrefs, the entire element becomes the target for the buttons. Set default to hidden, then use pseudo class :target to show it on click
+  &:target {
     opacity: 1;
     visibility: visible;
   }
 
-  &:target &__content { // When popup becomes the target, style the child element of the popup (__content)...
+  &:target &__content {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
@@ -82,9 +78,9 @@
     &:visited {
       color: $color-grey-dark-1;
       position: absolute;
-      top: 2.5rem;
-      right: 2.5rem;
-      font-size: 3rem;
+      top: 1.98rem;
+      right: 1.98rem;
+      font-size: 2.38rem;
       text-decoration: none;
       display: inline-block;
       transition: all .2s;
@@ -116,10 +112,10 @@
         align-items: flex-start;
         justify-content: center;
         width: 100%;
-        padding: 3rem 5rem;
+        padding: 2.38rem 3.96rem;
 
         .btn--green {
-          align-self: flex-end; // Align the button to the right (right now its to the left because of flex-start)
+          align-self: flex-end;
         }
       }
 

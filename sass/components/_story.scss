@@ -1,12 +1,12 @@
 .story {
   width: 75%;
-  margin:0 auto;
+  margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
-  background-color: rgba($color-white, .6); // To make the background slightly transparent without making the text transparent
+  background-color: rgba($color-white, .6);
   border-radius: 3px;
-  padding: 6rem;
-  padding-left: 9rem; // To account for the transform of -3rem in child element
-  font-size: $default-font-size;
+  padding: 4.76rem;
+  padding-left: 7.14rem;
+  font-size: 1.27rem;
   transform: skewX(-12deg);
   position: relative;
 
@@ -21,38 +21,36 @@
   }
 
   &__shape {
-    width: 15rem;
-    height: 15rem;
+    width: 11.9rem;
+    height: 11.9rem;
     float: left;
-    transform: translateX(-3rem) skewX(12deg); // To move the shape to the left (transform is better than margins, etc. when using float)
+    transform: translateX(-2.38rem) skewX(12deg);
     position: relative;
     overflow: hidden;
-    border-radius: 50%;;
+    border-radius: 50%;
 
-    // Feature query
-    // If clip-path or -webkit-clip-path is supported, then apply the clip-path style.
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
       -webkit-clip-path: circle(50% at 50% 50%);
-      clip-path: circle(50% at 50% 50%); // To make the shape itself circular
-      -webkit-shape-outside: circle(50% at 50% 50%); // Safari
-      shape-outside: circle(50% at 50% 50%); // To make the text wrap around the shape
+      clip-path: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
       border-radius: none;
     }
 
     @include respond(phone) {
-      transform: translateX(-3rem) skewX(0);
+      transform: translateX(-2.38rem) skewX(0);
     }
   }
 
   &__img {
     height: 100%;
-    transform: translateX(-4rem) scale(1.4); // To center/move the image to the left ; To scale the image up for the scale down animation on hover
-    backface-visibility: hidden; // To fix animation glitch
+    transform: translateX(-3.17rem) scale(1.4);
+    backface-visibility: hidden;
     transition: all .5s;
   }
 
   &__text {
-    transform: skewX(12deg);
+    transform: skewX(9.5deg);
 
     @include respond(phone) {
       transform: skewX(0);
@@ -63,11 +61,11 @@
     @include absCenter;
     color: $color-white;
     text-transform: uppercase;
-    font-size: 1.7rem;
+    font-size: 1.35rem;
     text-align: center;
-    opacity: 0; // To hide the text for the iitial state (appears on hover)
+    opacity: 0;
     transition: all .5s;
-    backface-visibility: hidden; // To fix animation glitch
+    backface-visibility: hidden;
   }
 
   &:hover &__caption {
@@ -76,7 +74,7 @@
   }
 
   &:hover &__img {
-    transform: translateX(-4rem) scale(1);
-    filter: blur(3px) brightness(80%); // Adds nice filter effects to the image on hover
+    transform: translateX(-3.17rem) scale(1);
+    filter: blur(3px) brightness(80%);
   }
 }

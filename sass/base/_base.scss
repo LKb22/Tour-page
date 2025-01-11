@@ -10,7 +10,7 @@
 
 html {
   // Setting universal size for responsive design/media queries
-  font-size: 62.5%; // Defines 1 rem. 1rem = 10px (Set default 16px to 10px = 62.5% (always use %, not px)).
+  // font-size: 62.5%;  Defines 1 rem. 1rem = 10px (Set default 16px to 10px = 62.5% (always use %, not px)).
 
   // Desktop first: From largest to smallest so that the declaration of the last media query that applies to the given browser width will be the one that is used (since it appears last in the stylesheet)
 
@@ -27,7 +27,7 @@ html {
 
   // Medium desktops
   @include respond(desktop-medium) {
-    font-size: 118.75%; // 1rem = 19px
+    font-size: 118.75%; // 1rem = 19px (Base size)
   }
 
   // Standard desktops
@@ -78,7 +78,7 @@ html {
 
 body {
   box-sizing: border-box; // Allows for padding and border to be included in the width
-  padding: 3rem; // Border around the whole edge of the page
+  padding: 2.38rem; // Border around the whole edge of the page
 
   @include respond(tablet-portrait) {
     padding: 0rem; // Remove padding starting at 900px
