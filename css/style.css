@@ -34,53 +34,44 @@
   padding: 0;
   box-sizing: inherit; }
 
-@media only screen and (min-width: 215em) {
-  html {
-    font-size: 137.5%; } }
-
-@media only screen and (max-width: 160em) {
-  html {
-    font-size: 125%; } }
-
-@media only screen and (max-width: 120em) {
-  html {
-    font-size: 118.75%; } }
-
-@media only screen and (max-width: 112.5em) {
-  html {
-    font-size: 112.5%; } }
-
-@media only screen and (max-width: 100em) {
-  html {
-    font-size: 106.25%; } }
-
-@media only screen and (max-width: 90em) {
-  html {
-    font-size: 100%; } }
-
-@media only screen and (max-width: 85.375em) {
-  html {
-    font-size: 93.75%; } }
-
-@media only screen and (max-width: 64em) {
-  html {
-    font-size: 87.5%; } }
-
-@media only screen and (max-width: 62em) {
-  html {
-    font-size: 81.25%; } }
-
-@media only screen and (max-width: 48em) {
-  html {
-    font-size: 75%; } }
-
-@media only screen and (max-width: 25.875em) {
-  html {
-    font-size: 68.75%; } }
-
-@media only screen and (max-width: 20em) {
-  html {
-    font-size: 62.5%; } }
+html {
+  font-size: 118.75%; }
+  @media only screen and (min-width: 215em) {
+    html {
+      font-size: 115%; } }
+  @media only screen and (max-width: 160em) {
+    html {
+      font-size: 110%; } }
+  @media only screen and (max-width: 120em) {
+    html {
+      font-size: 100%; } }
+  @media only screen and (max-width: 112.5em) {
+    html {
+      font-size: 95%; } }
+  @media only screen and (max-width: 100em) {
+    html {
+      font-size: 90%; } }
+  @media only screen and (max-width: 90em) {
+    html {
+      font-size: 85%; } }
+  @media only screen and (max-width: 85.375em) {
+    html {
+      font-size: 80%; } }
+  @media only screen and (max-width: 64em) {
+    html {
+      font-size: 75%; } }
+  @media only screen and (max-width: 62em) {
+    html {
+      font-size: 70%; } }
+  @media only screen and (max-width: 48em) {
+    html {
+      font-size: 65%; } }
+  @media only screen and (max-width: 25.875em) {
+    html {
+      font-size: 60%; } }
+  @media only screen and (max-width: 20em) {
+    html {
+      font-size: 55%; } }
 
 body {
   box-sizing: border-box;

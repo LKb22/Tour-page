@@ -12,67 +12,69 @@ html {
   // Setting universal size for responsive design/media queries
   // font-size: 62.5%;  Defines 1 rem. 1rem = 10px (Set default 16px to 10px = 62.5% (always use %, not px)).
 
+  // 1rem = 19px (Base size) for desktop-medium
+  font-size: 118.75%;
+
   // Desktop first: From largest to smallest so that the declaration of the last media query that applies to the given browser width will be the one that is used (since it appears last in the stylesheet)
 
   // Ultra-wide monitors
-  // Ultra-wide monitors
   @include respond(monitor-ultrawide) {
-    font-size: 137.5%; // 1rem = 22px
+    font-size: 115%; // 1rem = 21.85px (Approx.)
   }
 
   // Large desktops
   @include respond(desktop-large) {
-    font-size: 125%; // 1rem = 20px
+    font-size: 110%; // 1rem = 20.9px
   }
 
-  // Medium desktops
+  // Medium desktops (default size)
   @include respond(desktop-medium) {
-    font-size: 118.75%; // 1rem = 19px (Base size)
+    font-size: 100%; // 1rem = 19px (Base size)
   }
 
   // Standard desktops
   @include respond(desktop) {
-    font-size: 112.5%; // 1rem = 18px
+    font-size: 95%; // 1rem = 18.05px
   }
 
   // Small desktops
   @include respond(desktop-small) {
-    font-size: 106.25%; // 1rem = 17px
+    font-size: 90%; // 1rem = 17.1px
   }
 
   // Large laptops
   @include respond(laptop-large) {
-    font-size: 100%; // 1rem = 16px
+    font-size: 85%; // 1rem = 16.15px
   }
 
   // Standard laptops
   @include respond(laptop) {
-    font-size: 93.75%; // 1rem = 15px
+    font-size: 80%; // 1rem = 15.2px
   }
 
   // Small laptops
   @include respond(laptop-small) {
-    font-size: 87.5%; // 1rem = 14px
+    font-size: 75%; // 1rem = 14.25px
   }
 
   // Tablets in landscape orientation
   @include respond(tablet-landscape) {
-    font-size: 81.25%; // 1rem = 13px
+    font-size: 70%; // 1rem = 13.3px
   }
 
   // Tablets in portrait orientation
   @include respond(tablet-portrait) {
-    font-size: 75%; // 1rem = 12px
+    font-size: 65%; // 1rem = 12.35px
   }
 
   // Large smartphones
   @include respond(mobile-lg) {
-    font-size: 68.75%; // 1rem = 11px
+    font-size: 60%; // 1rem = 11.4px
   }
 
   // Small smartphones
   @include respond(mobile-sm) {
-    font-size: 62.5%; // 1rem = 10px (Base size)
+    font-size: 55%; // 1rem = 10.45px (Base size)
   }
 }
 
