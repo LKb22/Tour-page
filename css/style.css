@@ -739,7 +739,7 @@ body {
         float: none; } }
 
 .row {
-  max-width: 90.402rem;
+  width: 90.402rem;
   margin: 0 auto; }
   @media only screen and (max-width: 48em) {
     .row {

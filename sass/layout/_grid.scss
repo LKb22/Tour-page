@@ -1,5 +1,5 @@
 .row {
-  max-width: $grid-width; // 1140px, use max width for responsive design
+  width: $grid-width; // 1140px, use max width for responsive design
   margin: 0 auto; // trick to center block elements inside another block element. margin top and bottom is 0, left and right is auto, meaning it will automatically calculate to center the element with equal margin on both sides
 
   @include respond(tablet-portrait) {
