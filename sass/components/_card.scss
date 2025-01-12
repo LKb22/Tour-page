@@ -4,11 +4,11 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative; // Since the child element is absolutely positioned, the parent needs to be relatively positioned
-  height: 52rem; // Set a height to the parent element to give each side a height
+  height: 42.5rem; // Set a height to the parent element to give each side a height
 
   // Add a child element to apply the 3D effect on
   &__side {
-    height: 52rem;
+    height: 42.5rem;
     transition: all .8s ease;
     position: absolute; // To position the 'front' and 'back' sides on top of each other
     top: 0;
@@ -52,7 +52,7 @@
   // FRONT SIDE STYLING
   &__picture {
     background-size: cover;
-    height: 23rem;
+    height: 17rem;
     background-blend-mode: screen; // To make the image lighter
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -76,14 +76,14 @@
   }
 
   &__heading {
-    font-size: 2.22rem;
+    font-size: 2rem;
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
     color: $color-white;
     position: absolute;
-    top: 9.51rem;
-    left: 1.58rem;
+    top: 10.5rem;
+    left: 5.5rem;
     width: 75%; // To make the heading take up 75% of the card's width
   }
 
@@ -112,7 +112,7 @@
   }
 
   &__details {
-    padding: 2.38rem;
+    padding: 2rem;
 
     ul {
       list-style: none;
@@ -121,7 +121,7 @@
 
       li {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding: 1rem;
 
         &:not(:last-child) {

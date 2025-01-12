@@ -1,4 +1,5 @@
 .section-about {
+  scroll-snap-align: center;
   background-color: $color-grey-light-1;
   padding: 18rem 0; // Adjusted padding
   margin-top: -15.86rem; // Adjusted margin-top
@@ -9,6 +10,7 @@
 }
 
 .section-features {
+  scroll-snap-align: center;
   padding: 15.86rem 0; // Adjusted padding
   background-image: linear-gradient(to right bottom,
     rgba($color-primary-light, 0.8),
@@ -38,6 +40,7 @@
 }
 
 .section-tours {
+  scroll-snap-align: center;
   background-color: $color-grey-light-1;
   padding: 18rem 0 9rem 0; // Adjusted padding
   margin-top: -7.93rem; // Adjusted margin-top
@@ -48,6 +51,7 @@
 }
 
 .section-stories {
+  scroll-snap-align: center;
   position: relative;
   padding: 9rem 0; // Adjusted padding
 
@@ -57,6 +61,7 @@
 }
 
 .section-book {
+  scroll-snap-align: center;
   padding: 11.9rem 0; // Adjusted padding
   background-image: $background-gradient-primary;
 

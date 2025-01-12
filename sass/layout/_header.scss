@@ -1,5 +1,9 @@
 .header {
+<<<<<<< HEAD
   max-height: 85vh; // Adjusted height based on scaling factor
+=======
+  height: 100vh; // Adjusted height based on scaling factor
+>>>>>>> 18b3d9d523c8f0b840894abf189a0723e0a65e1a
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top center;
