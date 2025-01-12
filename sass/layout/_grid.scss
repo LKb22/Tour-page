@@ -8,7 +8,7 @@
   }
 
   &:not(:last-child) { // To select all elements except the last child
-    margin-bottom: $gutter-vertical;
+    margin-bottom: 5rem;
 
     @include respond(tablet-portrait) {
       margin-bottom: $gutter-horizontal;

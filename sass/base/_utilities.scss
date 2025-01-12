@@ -2,8 +2,16 @@
   text-align: center !important;
 }
 
-.u-margin-bottom-big {
+.u-margin-bottom-huge {
   margin-bottom: 6.34rem !important;
+
+  @include respond(tablet-portrait) {
+    margin-bottom: 3.96rem !important;
+  }
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 5rem !important;
 
   @include respond(tablet-portrait) {
     margin-bottom: 3.96rem !important;
@@ -28,4 +36,8 @@
 
 .u-margin-top-big {
   margin-top: 6.34rem !important;
+}
+
+.u-margin-top-small {
+  margin-top: 5rem !important;
 }

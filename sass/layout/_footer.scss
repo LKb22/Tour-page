@@ -1,7 +1,7 @@
 .footer {
   background-color: $color-grey-dark-3;
   padding: 7.93rem 0;
-  font-size: 1.11rem;
+  font-size: 1.27rem;;
   color: $color-grey-light-1;
 
   @include respond(tablet-portrait) {
@@ -25,6 +25,7 @@
   &__navigation {
     border-top: 1px solid $color-grey-dark-1;
     padding-top: 1.58rem;
+    width: 80%;
     display: inline-block;
 
     @include respond(tablet-portrait) {

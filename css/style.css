@@ -75,7 +75,12 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 2.38rem; }
+  padding: 2.38rem;
+  overflow-y: scroll;
+  /* Enable scrolling */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  /* Adds smooth scroll transition */ }
   @media only screen and (max-width: 48em) {
     body {
       padding: 0rem; } }
@@ -126,7 +131,7 @@ body {
         letter-spacing: .5rem; } }
 
 .heading-tertiary {
-  font-size: 1.27rem;
+  font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase; }
 
@@ -138,8 +143,14 @@ body {
 .u-center-text {
   text-align: center !important; }
 
-.u-margin-bottom-big {
+.u-margin-bottom-huge {
   margin-bottom: 6.34rem !important; }
+  @media only screen and (max-width: 48em) {
+    .u-margin-bottom-huge {
+      margin-bottom: 3.96rem !important; } }
+
+.u-margin-bottom-big {
+  margin-bottom: 5rem !important; }
   @media only screen and (max-width: 48em) {
     .u-margin-bottom-big {
       margin-bottom: 3.96rem !important; } }
@@ -158,6 +169,9 @@ body {
 
 .u-margin-top-big {
   margin-top: 6.34rem !important; }
+
+.u-margin-top-small {
+  margin-top: 5rem !important; }
 
 .bg-video {
   position: absolute;
@@ -248,9 +262,9 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem; }
+  height: 42.5rem; }
   .card__side {
-    height: 52rem;
+    height: 42.5rem;
     transition: all .8s ease;
     position: absolute;
     top: 0;
@@ -277,7 +291,7 @@ body {
     transform: rotateY(0); }
   .card__picture {
     background-size: cover;
-    height: 23rem;
+    height: 17rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -290,14 +304,14 @@ body {
     .card__picture--3 {
       background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(/img/nat-7.jpg); }
   .card__heading {
-    font-size: 2.22rem;
+    font-size: 2rem;
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
     color: white;
     position: absolute;
-    top: 9.51rem;
-    left: 1.58rem;
+    top: 10.5rem;
+    left: 5.5rem;
     width: 75%; }
   .card__heading-span {
     padding: 0.79rem 1.19rem;
@@ -310,14 +324,14 @@ body {
     .card__heading-span--3 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__details {
-    padding: 2.38rem; }
+    padding: 2rem; }
     .card__details ul {
       list-style: none;
       width: 80%;
       margin: 0 auto; }
       .card__details ul li {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 0.1rem solid #eee; }
@@ -415,7 +429,7 @@ body {
 
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.19rem;
+  font-size: 1.27rem;
   padding: 1.98rem;
   text-align: center;
   border-radius: 3px;
@@ -425,7 +439,7 @@ body {
     .feature-box {
       padding: 1.58rem; } }
   .feature-box__icon {
-    font-size: 4.75rem;
+    font-size: 5rem;
     margin-bottom: 0.4rem;
     display: inline-block;
     background-image: linear-gradient(to right, #7ed56f, #28b485);
@@ -441,7 +455,7 @@ body {
   margin-bottom: 1.58rem; }
 
 .form__input {
-  font-size: 0.79rem;
+  font-size: 1.27rem;
   font-family: inherit;
   color: inherit;
   padding: 1.19rem 1.58rem;
@@ -689,7 +703,7 @@ body {
 .footer {
   background-color: #333;
   padding: 7.93rem 0;
-  font-size: 1.11rem;
+  font-size: 1.27rem;
   color: #f7f7f7; }
   @media only screen and (max-width: 48em) {
     .footer {
@@ -706,6 +720,7 @@ body {
   .footer__navigation {
     border-top: 1px solid #777;
     padding-top: 1.58rem;
+    width: 80%;
     display: inline-block; }
     @media only screen and (max-width: 48em) {
       .footer__navigation {
@@ -746,7 +761,7 @@ body {
       max-width: 50rem;
       padding: 0 3rem; } }
   .row:not(:last-child) {
-    margin-bottom: 6.344rem; }
+    margin-bottom: 5rem; }
     @media only screen and (max-width: 48em) {
       .row:not(:last-child) {
         margin-bottom: 4.758rem; } }
@@ -779,7 +794,7 @@ body {
     width: calc(3 * ((100% - 3 * 4.758rem) / 4) + (2 * (4.758rem))); }
 
 .header {
-  height: 85vh;
+  height: 100vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top center;
@@ -959,14 +974,16 @@ body {
   transform: rotate(-135deg); }
 
 .section-about {
+  scroll-snap-align: center;
   background-color: #f7f7f7;
-  padding: 19.825rem 0;
+  padding: 18rem 0;
   margin-top: -15.86rem; }
   @media only screen and (max-width: 48em) {
     .section-about {
       padding: 15.86rem 0; } }
 
 .section-features {
+  scroll-snap-align: center;
   padding: 15.86rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
@@ -979,21 +996,24 @@ body {
       padding: 7.93rem 0; } }
 
 .section-tours {
+  scroll-snap-align: center;
   background-color: #f7f7f7;
-  padding: 19.825rem 0 11.9rem 0;
+  padding: 18rem 0 9rem 0;
   margin-top: -7.93rem; }
   @media only screen and (max-width: 48em) {
     .section-tours {
       padding: 15.86rem 0 7.93rem 0; } }
 
 .section-stories {
+  scroll-snap-align: center;
   position: relative;
-  padding: 11.9rem 0; }
+  padding: 9rem 0; }
   @media only screen and (max-width: 48em) {
     .section-stories {
       padding: 7.93rem 0; } }
 
 .section-book {
+  scroll-snap-align: center;
   padding: 11.9rem 0;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
   @media only screen and (max-width: 48em) {
