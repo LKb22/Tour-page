@@ -1,9 +1,5 @@
 .header {
-<<<<<<< HEAD
-  max-height: 85vh; // Adjusted height based on scaling factor
-=======
-  height: 100vh; // Adjusted height based on scaling factor
->>>>>>> 18b3d9d523c8f0b840894abf189a0723e0a65e1a
+  max-height: 85vh;
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top center;
@@ -22,9 +18,15 @@
   }
 
   @include respond(tablet-portrait-2) {
-    max-height: 45vh;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 100%);
+    max-height: 40vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 35vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 35vh, 0 100%);
+  }
+
+  @include respond(tablet-portrait) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%); // Adjusted height for clip-path
+    clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%); // Adjusted height for clip-path
+    min-height: 85vh;
   }
 
   &__logo-box {
@@ -47,7 +49,7 @@
 }
 
 .heading-secondary {
-  font-size: 2.78rem; // Adjusted font size based on scaling factor
+  font-size: clamp(16px, 3rem, 66px); // Adjusted font size based on scaling factor
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
@@ -57,6 +59,7 @@
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 0.158rem; // Adjusted letter-spacing
+  padding: 0 2.1rem; // Adjusted padding
   transition: all 0.2s;
 
   &:hover {

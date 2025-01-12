@@ -49,7 +49,7 @@
   }
 
   &__text {
-    font-size: 1.11rem;
+    font-size: $default-font-size;
     margin-bottom: 3.17rem;
     -moz-column-count: 2;
     -moz-column-gap: 3.17rem;
@@ -80,7 +80,7 @@
       position: absolute;
       top: 1.98rem;
       right: 1.98rem;
-      font-size: 2.38rem;
+      font-size: clamp(14px, 2.38rem, 54px);
       text-decoration: none;
       display: inline-block;
       transition: all .2s;

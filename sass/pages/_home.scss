@@ -5,7 +5,13 @@
   margin-top: -15.86rem; // Adjusted margin-top
 
   @include respond(tablet-portrait) {
-    padding: 15.86rem 0; // Adjusted padding for tablet
+    padding: 16rem 0; // Adjusted padding for tablet
+    margin-top: -10rem
+  }
+
+  @include respond(tablet-portrait-2) {
+    padding: 17rem 0;
+    margin-top: -13rem
   }
 }
 
@@ -43,7 +49,7 @@
   scroll-snap-align: center;
   background-color: $color-grey-light-1;
   padding: 18rem 0 9rem 0; // Adjusted padding
-  margin-top: -7.93rem; // Adjusted margin-top
+  margin-top: -10rem; // Adjusted margin-top
 
   @include respond(tablet-portrait) {
     padding: 15.86rem 0 7.93rem 0; // Adjusted padding for tablet
@@ -65,7 +71,7 @@
   padding: 11.9rem 0; // Adjusted padding
   background-image: $background-gradient-primary;
 
-  @include respond(tablet-portrait) {
+  @include respond(tablet-portrait-2) {
     padding: 7.93rem 0; // Adjusted padding for tablet
   }
 
@@ -78,14 +84,15 @@
     background-size: 100%;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    background-size: cover;
+    background-position: top center;
 
-    @include respond(tabletlet-landscape) {
+    @include respond(tablet-portrait-2) {
       background-image: linear-gradient(105deg,
         rgba($color-white, .9) 0%,
-        rgba($color-white, .9) 65%,
-        transparent 65%),
+        rgba($color-white, .9) 55%,
+        transparent 55%),
       url(/img/nat-10.jpg);
-      background-size: cover;
     }
 
     @include respond(tablet-portrait) {
@@ -99,13 +106,14 @@
       width: 50%; // Adjusted width
       padding: 4.758rem;
 
-      @include respond(tabletlet-landscape) {
-        width: 51.55%; // Adjusted width for landscape
+      @include respond(tablet-portrait-2) {
+        width: 59%; // Adjusted width for phone
       }
 
       @include respond(tablet-portrait) {
-        width: 79.3%; // Adjusted width for portrait
+        width: 100%; // Adjusted width for portrait
       }
+
     }
   }
 }

@@ -21,7 +21,7 @@
       right: 3.17rem;
     }
 
-    @include respond(phone) {
+    @include respond(tablet-portrait-2) {
       top: 2.38rem;
       right: 2.38rem;
     }
@@ -43,7 +43,7 @@
       right: 3.57rem;
     }
 
-    @include respond(phone) {
+    @include respond(tablet-portrait-2) {
       top: 2.78rem;
       right: 2.78rem;
     }
@@ -76,7 +76,7 @@
     &:link,
     &:visited {
       display: inline-block;
-      font-size: 2.38rem; // Adjusted font size
+      font-size: clamp(14px, 2.38rem, 54px); // Adjusted font size
       font-weight: 300;
       padding: 0.79rem 1.58rem; // Adjusted padding
       color: $color-white;

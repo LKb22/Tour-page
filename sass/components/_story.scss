@@ -6,7 +6,7 @@
   border-radius: 3px;
   padding: 4.76rem;
   padding-left: 7.14rem;
-  font-size: 1.27rem;
+  font-size: $default-font-size;
   transform: skewX(-12deg);
   position: relative;
 
@@ -16,8 +16,9 @@
     padding-left: 7rem;
   }
 
-  @include respond(phone) {
+  @include respond(tablet-portrait-2) {
     transform: skewX(0);
+
   }
 
   &__shape {
@@ -37,7 +38,7 @@
       border-radius: none;
     }
 
-    @include respond(phone) {
+    @include respond(tablet-portrait-2) {
       transform: translateX(-2.38rem) skewX(0);
     }
   }
@@ -52,7 +53,7 @@
   &__text {
     transform: skewX(9.5deg);
 
-    @include respond(phone) {
+    @include respond(tablet-portrait-2) {
       transform: skewX(0);
     }
   }
@@ -61,7 +62,7 @@
     @include absCenter;
     color: $color-white;
     text-transform: uppercase;
-    font-size: 1.35rem;
+    font-size: clamp(12px, 1.35rem, 30px);
     text-align: center;
     opacity: 0;
     transition: all .5s;

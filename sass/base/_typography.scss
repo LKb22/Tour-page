@@ -14,7 +14,7 @@ body {
 
   &__main {
     display: block;
-    font-size: 4.76rem;
+    font-size: clamp(28px, 4.76rem, 5rem);
     font-weight: 400;
     letter-spacing: 2.77rem;
     /* Animation-name and -duration are the only two properties required for animation to work */
@@ -25,34 +25,25 @@ body {
     animation-delay: 3s;
     animation-iteration-count: 3;
     */
-
-    @include respond(phone) {
-      letter-spacing: 1rem;
-      font-size: 5rem;
-    }
   }
 
   &__sub {
     display: block;
-    font-size: 1.59rem;
+    font-size: clamp(16px, 1.59rem, 36px);
     font-weight: 700;
     letter-spacing: 1.39rem;
     animation: moveInRight 1s ease-out;
-
-    @include respond(phone) {
-      letter-spacing: .5rem;
-    }
   }
 }
 
 .heading-tertiary {
-  font-size: 1.4rem;
+  font-size: clamp(14px, 1.4rem, 32px);
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .paragraph {
-  font-size: 1.27rem;
+  font-size: $default-font-size;
 
   &:not(:last-child) {
     margin-bottom: 2.38rem;

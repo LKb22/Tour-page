@@ -17,12 +17,12 @@
 // ORDER: base + typography > general layout + grid > page layout > components
 
 $mobile-sm: 20em; // 320 x 568 (16:9 typical on small smartphones)
+$mobile-md: 23.438em; // 375 x 667 (16:9 typical on medium smartphones)
 $mobile-lg: 25.875em; // 414 x 896 (19.5:9 typical on large smartphones)
 $phone: 37.5em; // 600 x 800 (3:4, typical for phones)
 $tablet-portrait: 48em; // 768 x 1024 (3:4, typical for tablets in portrait mode)
 $tablet-portrait-2: 56.25em; // 900 x 1440 (5:8, typical for tablets in portrait mode)
 $tablet-landscape: 62em; // 992 x 744 (covers tablets in landscape mode distinctly)
-$tablet-portrait-2: 56.25em; // 900 x 1440 (5:8, typical for tablets in portrait mode)
 $laptop-small: 64em; // 1024 x 768 (4:3, typical for small laptops)
 $laptop: 85.375em; // 1366 x 768 (16:9, typical for standard laptops)
 $laptop-large: 90em; // 1440 x 900 (16:10, typical for large laptops)
@@ -36,6 +36,9 @@ $monitor-ultrawide: 215em; // 3440 x 1440 (21:9, typical for ultrawide monitors)
 @mixin respond($breakpoint) {
   @if $breakpoint == mobile-sm {
     @media only screen and (max-width: #{$mobile-sm}) { @content; }
+  }
+  @if $breakpoint == mobile-md {
+    @media only screen and (max-width: #{$mobile-lg}) { @content; }
   }
   @if $breakpoint == mobile-lg {
     @media only screen and (max-width: #{$mobile-lg}) { @content; }

@@ -4,6 +4,10 @@
 
 .u-margin-bottom-huge {
   margin-bottom: 6.34rem !important;
+
+  @include respond(tablet-portrait-2) {
+    margin-bottom: 4.5rem !important;
+  }
 }
 
 .u-margin-bottom-big {

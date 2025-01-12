@@ -4,11 +4,11 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative; // Since the child element is absolutely positioned, the parent needs to be relatively positioned
-  height: 42.5rem; // Set a height to the parent element to give each side a height
+  height: 52rem; // Set a height to the parent element to give each side a height
 
   // Add a child element to apply the 3D effect on
   &__side {
-    height: 42.5rem;
+    height: 52rem;
     transition: all .8s ease;
     position: absolute; // To position the 'front' and 'back' sides on top of each other
     top: 0;
@@ -52,7 +52,7 @@
   // FRONT SIDE STYLING
   &__picture {
     background-size: cover;
-    height: 17rem;
+    height: 23rem;
     background-blend-mode: screen; // To make the image lighter
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -76,14 +76,14 @@
   }
 
   &__heading {
-    font-size: 2rem;
+    font-size: clamp(16px, 2.22rem, 48px);
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
     color: $color-white;
     position: absolute;
-    top: 10.5rem;
-    left: 5.5rem;
+    top: 9.51rem;
+    left: 1.58rem;
     width: 75%; // To make the heading take up 75% of the card's width
   }
 
@@ -112,7 +112,7 @@
   }
 
   &__details {
-    padding: 2rem;
+    padding: 2.38rem;
 
     ul {
       list-style: none;
@@ -121,7 +121,7 @@
 
       li {
         text-align: center;
-        font-size: 1.3rem;
+        font-size: $default-font-size;
         padding: 1rem;
 
         &:not(:last-child) {
@@ -145,19 +145,17 @@
   }
 
   &__price-only {
-    font-size: 1.11rem;
+    font-size: $default-font-size;
     text-transform: uppercase;
   }
 
   &__price-value {
-    font-size: 4.75rem;
+    font-size: clamp(24px, 4.75rem, 124px);
     font-weight: 100;
   }
 
-  // @include respond(tablet-portrait) {
-
-    @media only screen and (max-width: 56.25em),
-      only screen and (hover: none) {  // Use original media query instead of mixin to add multiple conditions. If scscreen smaller than 900 AND no hover, then apply the following styles
+  @media only screen and (max-width: 56.25em),
+    only screen and (hover: none) {  // Use original media query instead of mixin to add multiple conditions. If scscreen smaller than 900 AND no hover, then apply the following styles
     height: auto;
     border-radius: 3px;
     background-color: $color-white;
@@ -188,15 +186,12 @@
       left: 0;
       transform: translate(0);
       width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
       padding: 5.56rem 3.17rem 3.17rem 3.17rem;
     }
 
     &__price-box {
       margin-bottom: 3rem;
-    }
-
-    &__price-value {
-      font-size: 4rem;
     }
   }
 }

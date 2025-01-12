@@ -34,7 +34,7 @@ $background-gradient-tertiary: linear-gradient(to right bottom,
 $box-shadow-color: rgba($color-black, .15);
 
 // FONT
-$default-font-size: 1.6rem;
+$default-font-size: clamp(12px, 1.27rem, 28px);
 
 // GRID
 $grid-width: 90.402rem;
