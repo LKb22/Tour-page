@@ -91,16 +91,6 @@ html {
 body {
   box-sizing: border-box; // Allows for padding and border to be included in the width
   padding: 2.38rem; // Border around the whole edge of the page
-<<<<<<< HEAD
-=======
-  overflow-y: scroll; /* Enable scrolling */
-  scroll-snap-type: y mandatory; // Snap to the nearest section
-  scroll-behavior: smooth; /* Adds smooth scroll transition */
-
-  @include respond(tablet-portrait) {
-    padding: 0rem; // Remove padding starting at 900px
-  }
->>>>>>> 18b3d9d523c8f0b840894abf189a0723e0a65e1a
 }
 @include respond(tablet-portrait-2) {
   padding: 0rem; // Remove padding starting at 900px
