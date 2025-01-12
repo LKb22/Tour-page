@@ -19,12 +19,12 @@ html {
 
   // Ultra-wide monitors
   @include respond(monitor-ultrawide) {
-    font-size: 115%; // 1rem = 21.85px (Approx.)
+    font-size: 136.875%; // 1rem = 26px (Approx.)
   }
 
   // Large desktops
   @include respond(desktop-large) {
-    font-size: 110%; // 1rem = 20.9px
+    font-size: 106%; // 1rem = 20.14px
   }
 
   // Medium desktops (default size)
@@ -34,37 +34,47 @@ html {
 
   // Standard desktops
   @include respond(desktop) {
-    font-size: 95%; // 1rem = 18.05px
+    font-size: 89.9% // 1rem = 17px
   }
 
   // Small desktops
   @include respond(desktop-small) {
-    font-size: 90%; // 1rem = 17.1px
+    font-size: 84.5%; // 1rem = 16px
   }
 
   // Large laptops
   @include respond(laptop-large) {
-    font-size: 85%; // 1rem = 16.15px
+    font-size: 78.9%; // 1rem = 15px
   }
 
   // Standard laptops
   @include respond(laptop) {
-    font-size: 80%; // 1rem = 15.2px
+    font-size: 73.75%; // 1rem = 14px
   }
 
   // Small laptops
   @include respond(laptop-small) {
-    font-size: 75%; // 1rem = 14.25px
+    font-size: 62.5%; // 1rem = 12px
   }
 
   // Tablets in landscape orientation
   @include respond(tablet-landscape) {
-    font-size: 70%; // 1rem = 13.3px
+    font-size: 58.125%; // 1rem = 11px
+  }
+
+   // Tablets in portrait orientation
+   @include respond(tablet-portrait-2) {
+    font-size: 53.125%; // 1rem = 10px
   }
 
   // Tablets in portrait orientation
   @include respond(tablet-portrait) {
-    font-size: 65%; // 1rem = 12.35px
+    font-size: 48.75%; // 1rem = 9px
+  }
+
+  // Large smartphones
+  @include respond(phone) {
+    font-size: 60%; // 1rem = 11.4px
   }
 
   // Large smartphones
@@ -81,13 +91,10 @@ html {
 body {
   box-sizing: border-box; // Allows for padding and border to be included in the width
   padding: 2.38rem; // Border around the whole edge of the page
-
-  @include respond(tablet-portrait) {
-    padding: 0rem; // Remove padding starting at 900px
-  }
 }
-
-
+@include respond(tablet-portrait-2) {
+  padding: 0rem; // Remove padding starting at 900px
+}
 ::selection {
   background-color: $color-primary;
   color: $color-white;

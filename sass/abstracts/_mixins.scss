@@ -20,6 +20,7 @@ $mobile-sm: 20em; // 320 x 568 (16:9 typical on small smartphones)
 $mobile-lg: 25.875em; // 414 x 896 (19.5:9 typical on large smartphones)
 $phone: 37.5em; // 600 x 800 (3:4, typical for phones)
 $tablet-portrait: 48em; // 768 x 1024 (3:4, typical for tablets in portrait mode)
+$tablet-portrait-2: 56.25em; // 900 x 1440 (5:8, typical for tablets in portrait mode)
 $tablet-landscape: 62em; // 992 x 744 (covers tablets in landscape mode distinctly)
 $laptop-small: 64em; // 1024 x 768 (4:3, typical for small laptops)
 $laptop: 85.375em; // 1366 x 768 (16:9, typical for standard laptops)
@@ -43,6 +44,9 @@ $monitor-ultrawide: 215em; // 3440 x 1440 (21:9, typical for ultrawide monitors)
   }
   @if $breakpoint == tablet-portrait {
     @media only screen and (max-width: #{$tablet-portrait}) { @content; }
+  }
+  @if $breakpoint == tablet-portrait-2 {
+    @media only screen and (max-width: #{$tablet-portrait-2}) { @content; }
   }
   @if $breakpoint == tablet-landscape {
     @media only screen and (max-width: #{$tablet-landscape}) { @content; }

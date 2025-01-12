@@ -1,5 +1,5 @@
 .header {
-  height: 85vh; // Adjusted height based on scaling factor
+  max-height: 85vh; // Adjusted height based on scaling factor
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top center;
@@ -17,9 +17,10 @@
       background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
   }
 
-  @include respond(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  @include respond(tablet-portrait-2) {
+    max-height: 45vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 100%);
   }
 
   &__logo-box {
@@ -53,14 +54,6 @@
   color: transparent;
   letter-spacing: 0.158rem; // Adjusted letter-spacing
   transition: all 0.2s;
-
-  @include respond(tablet-portrait) {
-    font-size: 2.38rem; // Adjusted font size for tablet
-  }
-
-  @include respond(phone) {
-    font-size: 1.98rem; // Adjusted font size for phone
-  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);

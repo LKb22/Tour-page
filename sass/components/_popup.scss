@@ -92,7 +92,7 @@
     }
   }
 
-  @include respond(tablet-portrait) {
+  @include respond(tablet-portrait-2) {
     .popup {
       &__content {
         display: flex;

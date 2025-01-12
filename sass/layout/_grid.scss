@@ -2,17 +2,17 @@
   width: $grid-width; // 1140px, use max width for responsive design
   margin: 0 auto; // trick to center block elements inside another block element. margin top and bottom is 0, left and right is auto, meaning it will automatically calculate to center the element with equal margin on both sides
 
-  @include respond(tablet-portrait) {
-    max-width: 50rem;
-    padding: 0 3rem;
-  }
-
   &:not(:last-child) { // To select all elements except the last child
-    margin-bottom: $gutter-vertical;
+    margin-bottom: 5rem;
 
-    @include respond(tablet-portrait) {
+    @include respond(tablet-portrait-2) {
       margin-bottom: $gutter-horizontal;
     }
+  }
+
+  @include respond(tablet-portrait-2) {
+    max-width: 70rem;
+    padding: 0 3.3rem;
   }
 
   @include clearfix; // include the clearfix mixin to clear the float
@@ -23,13 +23,13 @@
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
 
-      @include respond(tablet-portrait) {
+      @include respond(tablet-portrait-2) {
         margin-right: 0;
-        margin-bottom: $gutter-horizontal;
+        margin-bottom: $gutter-vertical-small;
       }
     }
 
-    @include respond(tablet-portrait) {
+    @include respond(tablet-portrait-2) {
       width: 100% !important;
     }
   }
