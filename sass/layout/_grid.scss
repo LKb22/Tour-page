@@ -5,6 +5,7 @@
   &:not(:last-child) { // To select all elements except the last child
     margin-bottom: 5rem;
 
+    // Query
     @include respond(tablet-portrait-2) {
       margin-bottom: $gutter-horizontal;
     }
