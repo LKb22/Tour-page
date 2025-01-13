@@ -1,14 +1,14 @@
 .header {
-  max-height: 85vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top center;
   position: relative;
 
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%); // Adjusted height for clip-path
-    clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%); // Adjusted height for clip-path
-    height: 95vh; // Adjusted height
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // Adjusted height for clip-path
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // Adjusted height for clip-path
+    height: 90vh; // Adjusted height
   }
 
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
@@ -18,15 +18,9 @@
   }
 
   @include respond(tablet-portrait-2) {
-    max-height: 40vh;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 35vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 35vh, 0 100%);
-  }
-
-  @include respond(tablet-portrait) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%); // Adjusted height for clip-path
-    clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%); // Adjusted height for clip-path
-    min-height: 85vh;
+    height: 75vh; // Adjusted height
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   }
 
   &__logo-box {

@@ -262,9 +262,9 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem; }
+  height: 48rem; }
   .card__side {
-    height: 52rem;
+    height: 48rem;
     transition: all .8s ease;
     position: absolute;
     top: 0;
@@ -285,12 +285,13 @@ body {
         background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
       .card__side--back--3 {
         background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+    .card__side__img-container {
+      width: 100%; }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
   .card__picture {
-    background-size: cover;
     height: 23rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -298,7 +299,7 @@ body {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     background-size: cover;
-    background-position: left center; }
+    background-position: center center; }
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(/img/nat-5.jpg); }
     .card__picture--2 {
@@ -306,15 +307,17 @@ body {
     .card__picture--3 {
       background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(/img/nat-7.jpg); }
   .card__heading {
+    position: relative;
+    margin-left: auto;
+    z-index: 10;
+    margin-top: -9rem;
+    padding: 1rem 1rem;
+    max-width: 24rem;
     font-size: clamp(16px, 2.22rem, 48px);
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
-    color: white;
-    position: absolute;
-    top: 15rem;
-    left: 4rem;
-    width: 75%; }
+    color: white; }
   .card__heading-span {
     padding: 0.79rem 1.19rem;
     -webkit-box-decoration-break: clone;
@@ -326,7 +329,7 @@ body {
     .card__heading-span--3 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__details {
-    padding: 2.38rem; }
+    padding: 1rem; }
     .card__details ul {
       list-style: none;
       width: 80%;
@@ -354,7 +357,7 @@ body {
   .card__price-value {
     font-size: clamp(24px, 4.75rem, 124px);
     font-weight: 100; }
-  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+  @media only screen and (max-width: 81.82em), only screen and (hover: none) {
     .card {
       height: auto;
       border-radius: 3px;
@@ -369,8 +372,6 @@ body {
           clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
       .card:hover .card__side--front {
         transform: rotateY(0); }
-      .card__details {
-        padding: 1rem 3rem; }
       .card__cta {
         position: relative;
         top: 0;
@@ -381,21 +382,6 @@ body {
         padding: 5.56rem 3.17rem 3.17rem 3.17rem; }
       .card__price-box {
         margin-bottom: 3rem; } }
-  @media only screen and (max-width: 56.25em) {
-    .card__heading {
-      top: 15rem;
-      left: 22rem;
-      width: 45%; } }
-  @media only screen and (max-width: 35em) {
-    .card__heading {
-      top: 13rem;
-      left: 12rem;
-      width: 55%; } }
-  @media only screen and (max-width: 30em) {
-    .card__heading {
-      top: 13rem;
-      left: 10rem;
-      width: 55%; } }
 
 .composition {
   position: relative; }
@@ -464,7 +450,8 @@ body {
     transform: translateY(-1.19rem) scale(1.03); }
 
 .form .heading-secondary {
-  padding: 0; }
+  padding: 0;
+  white-space: nowrap; }
 
 .form__group:not(:last-child) {
   margin-bottom: 1.58rem; }
@@ -509,7 +496,7 @@ body {
 .form__radio-group {
   width: 49%;
   display: inline-block; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 85.375em) {
     .form__radio-group {
       width: 100%;
       margin-bottom: 2rem; } }
@@ -823,45 +810,27 @@ body {
 
 @media only screen and (max-width: 56.25em) {
   .section-tours .row {
-    max-width: 50rem;
     padding: 0; } }
 
-@media only screen and (max-width: 37.5em) {
-  .section-tours .row {
-    max-width: 40rem; } }
-
-@media only screen and (max-width: 25.875em) {
-  .section-tours .row {
-    max-width: 35rem; } }
-
-@media only screen and (max-width: 25.875em) {
-  .section-tours .row {
-    max-width: 35rem; } }
-
 .header {
-  max-height: 85vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top center;
   position: relative; }
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     .header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%);
-      height: 95vh; } }
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      height: 90vh; } }
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
   @media only screen and (max-width: 56.25em) {
     .header {
-      max-height: 40vh;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 35vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 35vh, 0 100%); } }
-  @media only screen and (max-width: 48em) {
-    .header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 75.4vh, 0 100%);
-      min-height: 85vh; } }
+      height: 75vh;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
     top: 3.17rem;
@@ -905,14 +874,10 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
   text-align: center;
   cursor: pointer; }
-  @media only screen and (max-width: 48em) {
-    .navigation__button {
-      top: 3.17rem;
-      right: 3.17rem; } }
   @media only screen and (max-width: 56.25em) {
     .navigation__button {
-      top: 2.38rem;
-      right: 2.38rem; } }
+      top: 4.4rem;
+      right: 4.4rem; } }
 
 .navigation__background {
   height: 4.76rem;
@@ -924,14 +889,10 @@ body {
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
-  @media only screen and (max-width: 48em) {
-    .navigation__background {
-      top: 3.57rem;
-      right: 3.57rem; } }
   @media only screen and (max-width: 56.25em) {
     .navigation__background {
-      top: 2.78rem;
-      right: 2.78rem; } }
+      top: 4.8rem;
+      right: 4.8rem; } }
 
 .navigation__nav {
   height: 100vh;
@@ -1022,59 +983,39 @@ body {
 .section-about {
   scroll-snap-align: center;
   background-color: #f7f7f7;
-  padding: 18rem 5rem;
-  margin-top: -15.86rem; }
-  @media only screen and (max-width: 56.25em) {
-    .section-about {
-      padding: 17rem 3rem;
-      margin-top: -13rem; } }
-  @media only screen and (max-width: 48em) {
-    .section-about {
-      padding: 16rem 3rem;
-      margin-top: -10rem; } }
+  padding: 19em 5rem;
+  margin-top: -11rem; }
 
 .section-features {
   scroll-snap-align: center;
-  padding: 15.86rem 5rem;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
-  margin-top: -7.93rem;
-  transform: skewY(-7deg); }
+  padding: 19rem 5rem;
+  margin-top: -7rem;
+  transform: skewY(-6deg); }
   .section-features > * {
-    transform: skewY(7deg); }
+    transform: skewY(6deg); }
   @media only screen and (max-width: 56.25em) {
     .section-features {
       transform: skewY(-5deg); }
       .section-features > * {
         transform: skewY(5deg); } }
-  @media only screen and (max-width: 48em) {
-    .section-features {
-      padding: 7.93rem 5rem; } }
 
 .section-tours {
   scroll-snap-align: center;
   background-color: #f7f7f7;
-  padding: 18rem 5rem 9rem 5rem;
-  margin-top: -10rem; }
-  @media only screen and (max-width: 48em) {
-    .section-tours {
-      padding: 15.86rem 0 7.93rem 0; } }
+  padding: 19rem 5rem 9rem 5rem;
+  margin-top: -7rem; }
 
 .section-stories {
   scroll-snap-align: center;
   position: relative;
   padding: 9rem 5rem; }
-  @media only screen and (max-width: 48em) {
-    .section-stories {
-      padding: 7.93rem 3rem; } }
 
 .section-book {
   scroll-snap-align: center;
-  padding: 11.9rem 5rem;
+  padding: 9rem 5rem;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
-  @media only screen and (max-width: 56.25em) {
-    .section-book {
-      padding: 7.93rem 3rem; } }
   .section-book .book {
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(/img/nat-10.jpg);
     background-size: 100%;
@@ -1097,3 +1038,8 @@ body {
       @media only screen and (max-width: 48em) {
         .section-book .book__form {
           width: 100%; } }
+
+@media only screen and (max-width: 48em) {
+  .section-stories,
+  .section-book {
+    padding: 7.93rem 3rem; } }

@@ -78,20 +78,7 @@
 .section-tours {
   .row {
     @include respond(tablet-portrait-2) {
-      max-width: 50rem;
       padding: 0;
-    }
-
-    @include respond(phone) {
-      max-width: 40rem;
-    }
-
-    @include respond(mobile-lg) {
-      max-width: 35rem;
-    }
-
-    @include respond(mobile-md) {
-      max-width: 35rem;
     }
   }
 }

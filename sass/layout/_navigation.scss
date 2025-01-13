@@ -16,14 +16,9 @@
     text-align: center;
     cursor: pointer;
 
-    @include respond(tablet-portrait) {
-      top: 3.17rem;
-      right: 3.17rem;
-    }
-
     @include respond(tablet-portrait-2) {
-      top: 2.38rem;
-      right: 2.38rem;
+      top: 4.4rem;
+      right: 4.4rem;
     }
   }
 
@@ -38,14 +33,9 @@
     z-index: 1000;
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 
-    @include respond(tablet-portrait) {
-      top: 3.57rem;
-      right: 3.57rem;
-    }
-
     @include respond(tablet-portrait-2) {
-      top: 2.78rem;
-      right: 2.78rem;
+      top: 4.8rem;
+      right: 4.8rem;
     }
   }
 

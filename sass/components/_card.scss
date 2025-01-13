@@ -4,11 +4,11 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative; // Since the child element is absolutely positioned, the parent needs to be relatively positioned
-  height: 52rem; // Set a height to the parent element to give each side a height
+  height: 48rem; // Set a height to the parent element to give each side a height
 
   // Add a child element to apply the 3D effect on
   &__side {
-    height: 52rem;
+    height: 48rem;
     transition: all .8s ease;
     position: absolute; // To position the 'front' and 'back' sides on top of each other
     top: 0;
@@ -39,6 +39,10 @@
         background-image: $background-gradient-tertiary
       }
     }
+
+    &__img-container {
+      width: 100%;
+    }
   }
 
   &:hover &__side--front {
@@ -51,7 +55,6 @@
 
   // FRONT SIDE STYLING
   &__picture {
-    background-size: cover;
     height: 23rem;
     background-blend-mode: screen; // To make the image lighter
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -59,7 +62,7 @@
     border-top-left-radius: 3px; // Clip path might break overflow, so re-set radius to align top corner radiuses of card and image
     border-top-right-radius: 3px;
     background-size: cover;
-    background-position: left center;
+    background-position: center center;
 
     &--1 {
       background-image: $background-gradient-secondary,
@@ -78,15 +81,17 @@
   }
 
   &__heading {
+    position: relative;
+    margin-left: auto; // Push the heading to the right, use margin-right: auto here instead of align-items in parent container because setting the margin top here will push the heading down and disrupt the flex layout
+    z-index: 10;
+    margin-top: -9rem;
+    padding: 1rem 1rem;
+    max-width: 24rem;
     font-size: clamp(16px, 2.22rem, 48px);
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
     color: $color-white;
-    position: absolute;
-    top: 15rem;
-    left: 4rem;
-    width: 75%; // To make the heading take up 75% of the card's width
   }
 
   &__heading-span {
@@ -114,7 +119,7 @@
   }
 
   &__details {
-    padding: 2.38rem;
+    padding: 1rem;
 
     ul {
       list-style: none;
@@ -156,7 +161,7 @@
     font-weight: 100;
   }
 
-  @media only screen and (max-width: 56.25em),
+  @media only screen and (max-width: 81.82em), // Use original media query instead of mixin to add multiple conditions. If screen smaller than 900, then apply the following styles
     only screen and (hover: none) {  // Use original media query instead of mixin to add multiple conditions. If scscreen smaller than 900 AND no hover, then apply the following styles
     height: auto;
     border-radius: 3px;
@@ -178,10 +183,6 @@
       transform: rotateY(0);
     }
 
-    &__details {
-      padding: 1rem 3rem;
-    }
-
     &__cta {
       position: relative;
       top: 0;
@@ -194,33 +195,6 @@
 
     &__price-box {
       margin-bottom: 3rem;
-    }
-  }
-
-  @media only screen and (max-width: 56.25em) {
-
-    &__heading {
-      top: 15rem;
-      left: 22rem;
-      width: 45%; // To make the heading take up 75% of the card's width
-    }
-  }
-
-  @media only screen and (max-width: 35em) {
-
-    &__heading {
-      top: 13rem;
-      left: 12rem;
-      width: 55%; // To make the heading take up 75% of the card's width
-    }
-  }
-
-  @media only screen and (max-width: 30em) {
-
-    &__heading {
-      top: 13rem;
-      left: 10rem;
-      width: 55%; // To make the heading take up 75% of the card's width
     }
   }
 }
