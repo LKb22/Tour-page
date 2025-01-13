@@ -14,85 +14,85 @@
 
     // Change for the <button> element
     border: none; // Remove the default border
-    cursor: pointer;
+    cursor: pointer; // Change the cursor to a pointer
   }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: translateY(-3px); // Move button up slightly on hover
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2); // Add a shadow on hover to make it look like the button is floating
 
-    &::after {
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
+    &::after { // After is a pseudo class that allows for the creation of a new element
+      transform: scaleX(1.4) scaleY(1.6); // Scale the after pseudo class to add a moving hover effect
+      opacity: 0; // Set the opacity to 0 to make it look like only the border of the button is growing and shrinking on hover
     }
   }
 
   &:active,
-  &:focus {
+  &:focus { // Focus is when the button is selected, Active is when the button is clicked
     outline: none; // Remove the default outline
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    transform: translateY(-1px); //Move the button up slightly on click
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2); // Add a smaller shadow on click to make it look like the button is being pressed
   }
-
+  // White button
   &--white {
     background-color: $color-white;
     color: $color-grey-dark-1;
 
-    &::after {
+    &::after { //
       background-color: $color-white;
     }
   }
-
+  // Green button
   &--green {
     background-color: $color-primary;
     color: $color-white;
 
-    &::after {
+    &::after { // After is a pseudo class that allows for the creation of a new element that is a child of the button element (in this case)
       background-color: $color-primary;
     }
   }
 
   // after pseudo class always requires content and display
   &::after {
-    content: "";
-    display: inline-block;
+    content: ""; // Required for the after pseudo class
+    display: inline-block; // Allows for the width and height to be set
     height: 100%;
     width: 100%; // AS a child of the button, to have the same size
     border-radius: 10rem;
-    position: absolute;
+    position: absolute; // Allows for the element to be positioned relative to the button (in this case, directly aligned with the button)
     top: 0;
     left: 0;
     z-index: -1; // Behind the button
-    transition: all 0.4s;
+    transition: all 0.4s; // Add for animation to work. All properties will transition over .4 seconds
   }
 
   &--animated {
-    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation: moveInBottom 0.5s ease-out 0.75s; // Name, Duration, Timing Function, Delay
     animation-fill-mode: backwards; // Automatically apply the styles before the animation starts (opacity: 0;)
   }
 }
 
 .btn-text {
-  &:link,
-  &:visited {
+  &:link, // Link is for unvisited links
+  &:visited { // Visited is for visited links
     font-size: $default-font-size;
     color: $color-primary;
     display: inline-block; // Allows for box-model padding and margin
     text-decoration: none;
     border-bottom: 1px solid $color-primary;
     padding-bottom: .24rem;
-    transition: all 0.2s; // All properties will transition over .2 seconds
+    transition: all 0.2s; // Add for transform to work. All properties will transition over .2 seconds
   }
 
   &:hover {
     background-color: $color-primary;
     color: $color-white;
     box-shadow: 0 1rem 2rem $box-shadow-color; // X, Y, Blur, Color(rgba allows for transparency)
-    transform: translateY(-2px);
+    transform: translateY(-2px); // Move the button up slightly on hover
   }
 
-  &:active {
+  &:active { // Active is when the button is clicked
     box-shadow: 0 .5rem 1rem $box-shadow-color; // X, Y, Blur, Color(rgba allows for transparency)
-    transform: translateY(0);
+    transform: translateY(0); // Move the button back to its original position on click
   }
 }

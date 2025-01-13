@@ -1,13 +1,15 @@
 // Desktop first, coding for default layout desktop-medium 1920 x 1080 (16:9, typical for medium desktops)
 
+// Base style: reset margin, padding, and box-sizing
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: inherit; // Inherited
 }
 
+// Base style: default font size
 html {
   // Setting universal size for responsive design/media queries
   // font-size: 62.5%;  Defines 1 rem. 1rem = 10px (Set default 16px to 10px = 62.5% (always use %, not px)).
@@ -93,11 +95,13 @@ html {
   }
 }
 
+// Base style: set border-box for all elements and padding around the edge of the page
 body {
   box-sizing: border-box; // Allows for padding and border to be included in the width
   padding: 2.38rem; // Border around the whole edge of the page
 }
 
+// Base style: set styling for heighlighted text
 ::selection {
   background-color: $color-primary;
   color: $color-white;

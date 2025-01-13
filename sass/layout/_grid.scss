@@ -1,7 +1,9 @@
 .row {
-  max-width: $grid-width;
-  margin: 0 auto; // trick to center block elements inside another block element. margin top and bottom is 0, left and right is auto, meaning it will automatically calculate to center the element with equal margin on both sides
+  max-width: $grid-width; // Set a max width for the row
+  // Common trick to center block elements inside another block element. margin top and bottom is 0, left and right is auto, meaning it will automatically calculate to center the element with equal margin on both sides
+  margin: 0 auto;
 
+  // Set a max width for the row at different breakpoints to make the layout responsive
   @include respond(tablet-landscape) {
     max-width: 85rem;
   }
@@ -22,34 +24,40 @@
     max-width: 50rem;
   }
 
+  // Vertical Styling for the row (column)
   &:not(:last-child) { // To select all elements except the last child
-    margin-bottom: 5rem;
+    margin-bottom: $gutter-vertical; // Create spacing between elements in a column layout
 
     // Query
     @include respond(tablet-portrait-2) {
-      margin-bottom: $gutter-horizontal;
+      margin-bottom: $gutter-vertical-small; // Adjust the margin for smaller screens between vertically stacked elements
     }
   }
 
-  @include clearfix; // include the clearfix mixin to clear the float
+  @include clearfix; // Include the clearfix mixin to clear the float
 
+  // Horizontal Styling for the columns in each row/section
   [class^="col-"] { // Attribute selector. Using ^, select all elements with class that starts with "col-" (use * for contains, $ for ends with)
-    float: left; // to make the element float to the left
+    float: left; // To make the element float to the left
 
     &:not(:last-child) {
-      margin-right: $gutter-horizontal;
+      margin-right: $gutter-horizontal; // Add a right margin to all elements except the last child to give spacing between columns
 
+      // For single column layout, remove the right margin and add a bottom margin for the the elements newly stacked in a single column
       @include respond(tablet-portrait-2) {
         margin-right: 0;
-        margin-bottom: $gutter-horizontal;
+        margin-bottom: $gutter-vertical-small;
       }
     }
 
+    // ** IMPORTANT **
+    // Override the widths of the columns at tablet-portrait-2 breakpoint to make them full width, creating a single column layout
     @include respond(tablet-portrait-2) {
       width: 100% !important;
     }
   }
 
+  // Set the width of the columns
   .col-1-of-2 {
     width: calc((100% - #{$gutter-horizontal}) / 2);
   }
@@ -75,10 +83,11 @@
   }
 }
 
+.section-features,
 .section-tours {
   .row {
     @include respond(tablet-portrait-2) {
-      padding: 0;
+      max-width: 50rem;
     }
   }
 }

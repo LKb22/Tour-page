@@ -7,7 +7,7 @@
   padding: 4.76rem;
   padding-left: 7.14rem;
   font-size: $default-font-size;
-  transform: skewX(-12deg);
+  transform: skewX(-12deg); // Skew the whole story box
   position: relative;
 
   @include respond(tablet-portrait) {
@@ -17,19 +17,21 @@
   }
 
   @include respond(tablet-portrait-2) {
-    transform: skewX(0);
+    transform: skewX(0); // Un-skew for smaller screens
 
   }
 
+  // The shape div creates a 'circular window' to view the image through
   &__shape {
     width: 11.9rem;
     height: 11.9rem;
-    float: left;
-    transform: translateX(-2.38rem) skewX(12deg);
-    position: relative;
-    overflow: hidden;
+    float: left; // Push the shape to the left
+    transform: translateX(-2.38rem) skewX(12deg); // Skew the image back to normal and push it less to the left than the image to create some padding
+    position: relative; // To make the caption absolute to the shape div
+    overflow: hidden; // Hide the rest of the image
     border-radius: 50%;
 
+    // Clip-path for modern browsers
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
       -webkit-clip-path: circle(50% at 50% 50%);
       clip-path: circle(50% at 50% 50%);
@@ -39,41 +41,44 @@
     }
 
     @include respond(tablet-portrait-2) {
-      transform: translateX(-2.38rem) skewX(0);
+      transform: translateX(-2.38rem) skewX(0); // Un-skew for smaller screens
     }
   }
 
   &__img {
     height: 100%;
-    transform: translateX(-3.17rem) scale(1.4);
-    backface-visibility: hidden;
+    transform: translateX(-3.17rem) scale(1.4); // Scale up the image to fit into the shape div and push it to the left
+    backface-visibility: hidden; // Hide the back of the image to prevent flickering
     transition: all .5s;
   }
 
   &__text {
-    transform: skewX(9.5deg);
+    transform: skewX(12deg); // Skew the text back to normal
 
     @include respond(tablet-portrait-2) {
-      transform: skewX(0);
+      transform: skewX(0); // Un-skew for smaller screens
     }
   }
 
+  // The caption is absolutely positioned to the shape div
   &__caption {
     @include absCenter;
     color: $color-white;
     text-transform: uppercase;
     font-size: clamp(12px, 1.35rem, 30px);
     text-align: center;
-    opacity: 0;
+    opacity: 0; // Hidden by default
     transition: all .5s;
-    backface-visibility: hidden;
+    backface-visibility: hidden; // To prevent flickering
   }
 
+  // Show the caption on hover
   &:hover &__caption {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
 
+  // (Move the image the same amount on hover as on the image to zoom out 'straight') Zoom out, blur and dim on hover effect
   &:hover &__img {
     transform: translateX(-3.17rem) scale(1);
     filter: blur(3px) brightness(80%);

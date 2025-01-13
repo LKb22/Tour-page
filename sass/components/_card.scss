@@ -1,20 +1,20 @@
 .card {
   // FUNCTIONALITY
   // Add perspective on the parent element to enable 3D effects
-  perspective: 150rem;
-  -moz-perspective: 150rem;
+  perspective: 150rem; // The higher the value, the more pronounced the effect
+  -moz-perspective: 150rem; // For Firefox
   position: relative; // Since the child element is absolutely positioned, the parent needs to be relatively positioned
   height: 48rem; // Set a height to the parent element to give each side a height
 
   // Add a child element to apply the 3D effect on
   &__side {
-    height: 48rem;
-    transition: all .8s ease;
+    height: 48rem; // Set a height to the child element to give the sides equal height
+    transition: all .8s ease; // Add a transition to all properties to create a smooth flip effect
     position: absolute; // To position the 'front' and 'back' sides on top of each other
-    top: 0;
-    left: 0;
+    top: 0; // Align the sides to the top of the parent element
+    left: 0; // Align the sides to the left of the parent element
     width: 100%; // To make the sides take up the full width of the parent
-    -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; // -webkit-
     backface-visibility: hidden; // To hide the back side when the front side is facing the user
     border-radius: 3px;
     overflow: hidden; // To hide the overflow of the image that covered the card's border-radius
@@ -27,6 +27,7 @@
     &--back {
       transform: rotateY(180deg); // Rotate the back side by 180 degrees to hide it
 
+      // Add different colors to each card on the back side
       &--1 {
         background-image: $background-gradient-secondary
       }
@@ -40,6 +41,7 @@
       }
     }
 
+    // Container for the image and header to use clip-path on the image without effectingthe header, and to position the header on top of the image
     &__img-container {
       width: 100%;
     }
@@ -55,15 +57,17 @@
 
   // FRONT SIDE STYLING
   &__picture {
-    height: 23rem;
+    height: 23rem; // Set a height to the image to keep it from overly distorting
     background-blend-mode: screen; // To make the image lighter
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    border-top-left-radius: 3px; // Clip path might break overflow, so re-set radius to align top corner radiuses of card and image
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); // Clip path to create a diagonal cut on the image
+    // Clip path might break overflow, so re-set radius to align top corner radiuses of card and image
+    border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    background-size: cover;
-    background-position: center center;
+    background-size: cover; // Cover the entire element with the image
+    background-position: center center; // Center the image both horizontally and vertically
 
+    // Add color gradient to each image
     &--1 {
       background-image: $background-gradient-secondary,
       url(/img/nat-5.jpg);
@@ -80,13 +84,14 @@
     }
   }
 
+  // Header sytling for each card's title, placed on top of the image
   &__heading {
-    position: relative;
-    margin-left: auto; // Push the heading to the right, use margin-right: auto here instead of align-items in parent container because setting the margin top here will push the heading down and disrupt the flex layout
-    z-index: 10;
-    margin-top: -9rem;
-    padding: 1rem 1rem;
-    max-width: 24rem;
+    position: relative; // To position the heading on top of the image and clip-path to avoid being cut off
+    margin-left: auto; // Push the heading to the right
+    z-index: 10; // To place the heading on top of the image
+    margin-top: -9rem; // Move the heading up to be on top of the image
+    padding: 1rem 1rem; // Add padding to the heading to make it stand out
+    max-width: 24rem; // Set a max width to the heading to keep it multi-lined/from stretching too far across the image
     font-size: clamp(16px, 2.22rem, 48px);
     font-weight: 300;
     text-transform: uppercase;
@@ -96,8 +101,8 @@
 
   &__heading-span {
     padding: 0.79rem 1.19rem; // To add some space around the text
-    -webkit-box-decoration-break: clone; // To treat the two lines of text as two separate elements (giving the padding to each line)
-    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; // To treat the two lines of text as two separate elements (giving the padding to each line), giving a unique look
 
     &--1 {
       background-image: (linear-gradient(to right bottom,
@@ -123,12 +128,12 @@
 
     ul {
       list-style: none;
-      width: 80%;
+      width: 80%; // Limit width of text and border-bottom lines
       margin: 0 auto; //Simplest way to center a block element inside a block element
 
       li {
-        text-align: center;
-        font-size: $default-font-size;
+        text-align: center; // Center the text in the list
+        font-size: clamp(14px, 1.4rem, 32px);
         padding: 1rem;
 
         &:not(:last-child) {
@@ -140,7 +145,7 @@
 
   // BACK SIDE STYLING
   &__cta {
-    @include absCenter;
+    @include absCenter; // Mixin to center the element
     width: 90%;
     text-align: center;
   }
@@ -148,7 +153,7 @@
   &__price-box {
     text-align: center;
     color: $color-white;
-    margin-bottom: 6.34rem;
+    margin-bottom: 6.34rem; // Seperate price from button
   }
 
   &__price-only {
@@ -161,36 +166,38 @@
     font-weight: 100;
   }
 
-  @media only screen and (max-width: 81.82em), // Use original media query instead of mixin to add multiple conditions. If screen smaller than 900, then apply the following styles
-    only screen and (hover: none) {  // Use original media query instead of mixin to add multiple conditions. If scscreen smaller than 900 AND no hover, then apply the following styles
-    height: auto;
+  // Use original media query instead of mixin to add multiple conditions.
+  // If screen smaller than 900 AND no hover (tablet, phone), then apply the following styles
+  @media only screen and (max-width: 81.82em),
+    only screen and (hover: none) {
+    height: auto; // Set height to auto to allow for the card to grow with the additional content
     border-radius: 3px;
     background-color: $color-white;
     box-shadow: 1 1.5rem 4rem rgba($color-black, .15);
 
     &__side {
-      height: auto;
+      height: auto; // Set on both sides
       position: relative;
       box-shadow: none;
 
       &--back {
-        transform: rotateY(0);
-        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%)
+        transform: rotateY(0); // Rotate the back side to 0 degrees to show it
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%) // Clip path to create a diagonal cut on the image
       }
     }
 
     &:hover &__side--front {
-      transform: rotateY(0);
+      transform: rotateY(0); // Rotate the front side to 0 degrees to prevent it from flipping
     }
 
+    //Styling for the back side brought to the front on smaller and no hover screens
     &__cta {
-      position: relative;
+      position: relative; // Position the element relative to the parent
       top: 0;
       left: 0;
-      transform: translate(0);
+      transform: translate(0); // Keep element on front side
       width: 100%;
-      padding: 7rem 4rem 4rem 4rem;
-      padding: 5.56rem 3.17rem 3.17rem 3.17rem;
+      padding: 7rem 4rem 4rem 4rem; // Additional padding on the top to cover clipped edge
     }
 
     &__price-box {

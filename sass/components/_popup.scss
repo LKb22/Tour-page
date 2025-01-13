@@ -1,3 +1,4 @@
+// Style the popup window background, covering the entire screen and hidden by default
 .popup {
   height: 100vh;
   width: 100%;
@@ -5,13 +6,14 @@
   top: 0;
   left: 0;
   background-color: rgba($color-black, .8);
-  z-index: 9999;
+  z-index: 9999; // On top of everything
   opacity: 0;
   visibility: hidden;
   transition: all .3s;
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); // Blur the background
 
+  // -webkit-backdrop-filter: blur(10px);
   @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -19,26 +21,28 @@
   }
 
   &__content {
-    @include absCenter;
+    @include absCenter; // To center
     width: 75%;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem $box-shadow-color;
     border-radius: 3px;
-    display: table;
+    display: table; // Use table to create two columns, left and right
     overflow: hidden;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(.25);
-    transition: all .5s .2s;
+    transform: translate(-50%, -50%) scale(.25); // Scale down to 25% to give a zoom in/out open and close effect
+    transition: all .5s .2s; // Delay the transition to give a nice effect
   }
 
+  // Left side of the popup
   &__left {
-    width: 33.333333333%;
-    display: table-cell;
+    width: 33.333333333%; // 1/3 of the table
+    display: table-cell; // Left column
   }
 
+  // Right side of the popup
   &__right {
-    width: 66.666666666%;
-    display: table-cell;
+    width: 66.666666666%; // 2/3 of the table
+    display: table-cell;  // Right column
     vertical-align: middle;
     padding: 2.38rem 3.96rem;
 
@@ -47,6 +51,7 @@
     }
   }
 
+  // Align images vertically
   &__img {
     display: block;
     width: 100%;
@@ -58,25 +63,26 @@
     -moz-column-count: 2;
     -moz-column-gap: 3.17rem;
     -moz-column-rule: 1px solid $color-grey-light-2;
-    column-count: 2;
-    column-gap: 3.17rem;
-    column-rule: 1px solid $color-grey-light-2;
+    column-count: 2; // Create two columns of text
+    column-gap: 3.17rem; // Gap between columns
+    column-rule: 1px solid $color-grey-light-2; // Line between columns
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
-    hyphens: auto;
+    hyphens: auto; // Hyphenate words at the end of a line when needed
   }
 
   &:target {
-    opacity: 1;
+    opacity: 1; // Make the popup visible
     visibility: visible;
   }
 
-  &:target &__content {
+  &:target &__content { // When the popup is targeted, make the content visible
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
 
+  // Create a close pupup button
   &__close {
     &:link,
     &:visited {
@@ -96,6 +102,7 @@
     }
   }
 
+  // Change styling to flexbox for smaller screens to bring images to the top and move button to the right
   @include respond(tablet-portrait-2) {
     .popup {
       &__content {

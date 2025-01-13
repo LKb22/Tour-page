@@ -1,4 +1,4 @@
-// Colors
+// COLORS
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
@@ -38,5 +38,6 @@ $default-font-size: clamp(12px, 1.27rem, 28px);
 
 // GRID
 $grid-width: 90.402rem;
-$gutter-vertical: 6.344rem;
+$gutter-vertical: 6rem;
+$gutter-vertical-small: 4.758rem;
 $gutter-horizontal: 4.758rem;

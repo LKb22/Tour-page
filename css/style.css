@@ -1,4 +1,3 @@
-/* Browser is optimized for opacity and transform with keyframes */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -93,7 +92,6 @@ body {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /* font-size: 16px; */
   line-height: 1.7;
   color: #777; }
 
@@ -101,15 +99,12 @@ body {
   color: white;
   text-transform: uppercase;
   backface-visibility: hidden;
-  /* In this case, fix to help with the animation shake bug*/
-  margin-bottom: 4.76rem;
-  /* Margin for white-space */ }
+  margin-bottom: 4.76rem; }
   .heading-primary__main {
     display: block;
     font-size: clamp(28px, 4.76rem, 5rem);
     font-weight: 400;
     letter-spacing: 2.77rem;
-    /* Animation-name and -duration are the only two properties required for animation to work */
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -145,12 +140,6 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 5rem !important; }
-  @media only screen and (max-width: 112.5em) {
-    .u-margin-bottom-big {
-      margin-bottom: 3.9rem !important; } }
-
-.u-margin-bottom-big {
-  margin-bottom: 5rem !important; }
   @media only screen and (max-width: 48em) {
     .u-margin-bottom-big {
       margin-bottom: 3.96rem !important; } }
@@ -161,16 +150,7 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.19rem !important; }
 
-.u-margin-top-huge {
-  margin-top: 7.93rem !important; }
-
 .u-margin-top-big {
-  margin-top: 5rem !important; }
-
-.u-margin-top-small {
-  margin-top: 4.5rem !important; }
-
-.u-margin-top-small {
   margin-top: 5rem !important; }
 
 .bg-video {
@@ -336,7 +316,7 @@ body {
       margin: 0 auto; }
       .card__details ul li {
         text-align: center;
-        font-size: clamp(12px, 1.27rem, 28px);
+        font-size: clamp(14px, 1.4rem, 32px);
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 0.1rem solid #eee; }
@@ -378,8 +358,7 @@ body {
         left: 0;
         transform: translate(0);
         width: 100%;
-        padding: 7rem 4rem 4rem 4rem;
-        padding: 5.56rem 3.17rem 3.17rem 3.17rem; }
+        padding: 7rem 4rem 4rem 4rem; }
       .card__price-box {
         margin-bottom: 3rem; } }
 
@@ -394,7 +373,7 @@ body {
     outline-offset: 1.58rem; }
     @media only screen and (max-width: 56.25em) {
       .composition__photo {
-        float: left;
+        float: right;
         position: relative;
         width: 33.3333333333%;
         box-shadow: 0 1.19rem 3.17rem rgba(0, 0, 0, 0.2); } }
@@ -404,14 +383,14 @@ body {
       @media only screen and (max-width: 56.25em) {
         .composition__photo--p1 {
           top: 0;
-          transform: scale(1.02); } }
+          transform: scale(1.03); } }
     .composition__photo--p2 {
       right: 0;
       top: 1.58rem; }
       @media only screen and (max-width: 56.25em) {
         .composition__photo--p2 {
           top: -0.79rem;
-          transform: scale(1.03);
+          transform: scale(1.05);
           z-index: 100; } }
     .composition__photo--p3 {
       left: 15.86%;
@@ -426,9 +405,11 @@ body {
       transform: scale(1.05) translateY(-0.39rem);
       box-shadow: 0 1.98rem 3.17rem rgba(0, 0, 0, 0.5);
       z-index: 120; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
 
 .feature-box {
-  height: 30rem;
+  height: 33rem;
   background-color: rgba(255, 255, 255, 0.8);
   font-size: clamp(12px, 1.27rem, 28px);
   padding: 1.98rem;
@@ -681,7 +662,7 @@ body {
     backface-visibility: hidden;
     transition: all .5s; }
   .story__text {
-    transform: skewX(9.5deg); }
+    transform: skewX(12deg); }
     @media only screen and (max-width: 56.25em) {
       .story__text {
         transform: skewX(0); } }
@@ -725,10 +706,12 @@ body {
     border-top: 1px solid #777;
     padding-top: 1.58rem;
     width: 80%;
+    float: left;
     display: inline-block; }
     @media only screen and (max-width: 56.25em) {
       .footer__navigation {
         width: 100%;
+        float: none;
         text-align: center; } }
   .footer__list {
     list-style: none; }
@@ -755,7 +738,8 @@ body {
     @media only screen and (max-width: 56.25em) {
       .footer__copyright {
         width: 100%;
-        float: none; } }
+        float: none;
+        text-align: center; } }
 
 .row {
   max-width: 90.402rem;
@@ -776,7 +760,7 @@ body {
     .row {
       max-width: 50rem; } }
   .row:not(:last-child) {
-    margin-bottom: 5rem; }
+    margin-bottom: 6rem; }
     @media only screen and (max-width: 56.25em) {
       .row:not(:last-child) {
         margin-bottom: 4.758rem; } }
@@ -809,8 +793,9 @@ body {
     width: calc(3 * ((100% - 3 * 4.758rem) / 4) + (2 * (4.758rem))); }
 
 @media only screen and (max-width: 56.25em) {
+  .section-features .row,
   .section-tours .row {
-    padding: 0; } }
+    max-width: 50rem; } }
 
 .header {
   height: 85vh;

@@ -1,4 +1,4 @@
-@mixin clearfix {
+@mixin clearfix { // Clearfix mixin to fix float issues
   &::after {
     content: "";
     display: table;
@@ -6,6 +6,8 @@
   }
 }
 
+// mixin to center elements horizontally in the row:
+//Set top and left to 50% and then translate the element back by 50% of its own size.
 @mixin absCenter {
   position: absolute;
   top: 50%;

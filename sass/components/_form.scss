@@ -2,24 +2,24 @@
 
   .heading-secondary {
     padding: 0;
-    white-space: nowrap;
+    white-space: nowrap; // Prevent text wrapping
     }
 
-  &__group:not(:last-child) {
+  &__group:not(:last-child) { // Select all but the last child to add a bottom margin
     margin-bottom: 1.58rem;
   }
 
   &__input {
     font-size: $default-font-size;
-    font-family: inherit;
-    color: inherit;
+    font-family: inherit; // Inherit the font-family
+    color: inherit; // Inherit the color
     padding: 1.19rem 1.58rem;
     border-radius: 2px;
     background-color: rgba($color-white, 0.5);
     border: none;
     border-bottom: 3px solid transparent;
     width: 90%;
-    display: block;
+    display: block; // Make the input a block element so it takes the full width available (this way the inputs align vertically)
     transition: all .3s;
 
     @include respond(tablet-portrait) {
@@ -46,10 +46,11 @@
     font-weight: 700;
     margin-left: 1.58rem;
     margin-top: .55rem;
-    display: block;
+    display: block; // Same with labels - vertical alignment
     transition: all .3s;
   }
 
+  // When the palceholder is shown (input is empty), hide the label under the input
   &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
@@ -58,8 +59,9 @@
 
   &__radio-group {
     width: 49%;
-    display: inline-block;
+    display: inline-block; // Appear in the same line
 
+    // Drop to align vertically on smaller screens
     @include respond(laptop) {
       width: 100%;
       margin-bottom: 2rem;
@@ -74,7 +76,7 @@
     font-size: $default-font-size;
     cursor: pointer;
     position: relative;
-    padding-left: 3.96rem;
+    padding-left: 3.96rem; // Add left padding to seperate from checkbox
   }
 
   &__radio-button {
@@ -82,11 +84,13 @@
     width: 2.38rem;
     border: 3.96px solid $color-primary;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-block; // Appear in the same line next to the label
     position: absolute;
     top: -.32rem;
     left: 0;
 
+    // Create the inner circle to act as the checkmark
+    // Use the ::after pseudo-element to create the inner circle and style it to opacity 0 to hide it once it's not checked anymore
     &::after {
       content: '';
       display: block;
@@ -100,6 +104,7 @@
     }
   }
 
+  // When the radio input is checked, change the opacity of the inner circle to 1 to show it
   &__radio-input:checked + &__radio-label &__radio-button::after {
     opacity: 1;
   }

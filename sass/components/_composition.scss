@@ -2,27 +2,30 @@
   position: relative; // This is the parent container
 
   &__photo {
-    width: 55%;
+    width: 55%; // To help overlap photos in the composition
     box-shadow: 0 1.19rem 3.17rem rgba($color-black, .4);
-    position: absolute; //Placed according to a reference, which is the parent container
-    z-index: 10;
+    position: absolute; // For absolute positioning of each photo in the composition
+    z-index: 10; // Stacking context, to control the order of the elements
     transition: all .2s;
-    outline-offset: 1.58rem; //
+    outline-offset: 1.58rem; // Space between the border outline on hover and the element
 
+    // Grid columns changes to single column layout at tablet-portrait-2 breakpoint
     @include respond(tablet-portrait-2) {
-      float: left;
-      position: relative;
-      width: 33.3333333333%;
+      float: right; // Float right /opposite side of button if there is room
+      position: relative; // Change to relative positioning to allow for scaling
+      width: 33.3333333333%; // To spread the photos in the composition, will result in 3 photos in a row since each photo is 33% wide
       box-shadow: 0 1.19rem 3.17rem rgba($color-black, .2);
     }
 
+    // Scale the photos in single column layout for design purposes
     &--p1 {
+      // Absolute positioning of the photo
       left: 0;
       top: -1.58rem;
 
       @include respond(tablet-portrait-2) {
         top: 0;
-        transform: scale(1.02);
+        transform: scale(1.03);
       }
     }
 
@@ -30,10 +33,11 @@
       right: 0;
       top: 1.58rem;
 
+      // Middle photo styling
       @include respond(tablet-portrait-2) {
-        top: -0.79rem;
-        transform: scale(1.03);
-        z-index: 100;
+        top: -0.79rem; // Offset
+        transform: scale(1.05); // Enlarge
+        z-index: 100; // Bring to front
       }
     }
 
@@ -49,14 +53,14 @@
     }
 
     &:hover {
-      outline: 1.5rem solid $color-primary; //Use instead of border so outline-offset can be used to create a space between the outline and the element
-      transform: scale(1.05) translateY(-0.39rem);
+      outline: 1.5rem solid $color-primary; // Use instead of border so outline-offset can be used to create a space between the outline and the element on hover
+      transform: scale(1.05) translateY(-0.39rem); // Scale and move the image up slightly on hover
       box-shadow: 0 1.98rem 3.17rem rgba($color-black, .5); // Shadow should get bigger when element gets bigger with transform
       z-index: 120; // Bring hovered element to the front by adding a higher z-index
     }
   }
 
-  &:hover &__photo:not(:hover) { // Select all the photos in the composition that are not being hovered, and shrink them
-
+  &:hover &__photo:not(:hover) {
+    transform: scale(.95); // Select all the photos in the composition that are not being hovered, and shrink them for a subtle effect
   }
 }

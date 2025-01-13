@@ -1,5 +1,5 @@
 .feature-box {
-  height: 30rem;
+  height: 33rem; // Height to keep even boxes
   background-color: rgba($color-white, 0.8);
   font-size: $default-font-size;
   padding: 1.98rem;
@@ -9,7 +9,7 @@
   transition: transform 0.2s;
 
   @include respond(tablet-portrait-2) {
-    height: auto;
+    height: auto; // Height to auto adjust boxes now that they are single column
   }
 
   &__icon {
@@ -24,6 +24,6 @@
   }
 
   &:hover {
-    transform: translateY(-1.19rem) scale(1.03);
+    transform: translateY(-1.19rem) scale(1.03); // Move and grow on hover
   }
 }

@@ -1,24 +1,24 @@
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: $color-grey-dark-1;
+  // font-size: 16px;
+  line-height: 1.7; // 1.7 is the golden ratio
+  color: $color-grey-dark-1; // Seen in padding around the edge of the page
 }
 
 .heading-primary {
   color: $color-white;
   text-transform: uppercase;
-  backface-visibility: hidden; /* In this case, fix to help with the animation shake bug*/
-  margin-bottom: 4.76rem; /* Margin for white-space */
+  backface-visibility: hidden; // In this case, fix to help with the animation shake bug
+  margin-bottom: 4.76rem; // Margin for white-space
 
   &__main {
-    display: block;
-    font-size: clamp(28px, 4.76rem, 5rem);
+    display: block; // Block-level element to take up the full width of the container
+    font-size: clamp(28px, 4.76rem, 5rem); // Use clamp to set a range of font sizes
     font-weight: 400;
     letter-spacing: 2.77rem;
-    /* Animation-name and -duration are the only two properties required for animation to work */
-    animation-name: moveInLeft;
+    // Animation -name and -duration are the only two properties required for animation to work
+    animation-name: moveInLeft; // Create a keyframe animation in _animations.scss
     animation-duration: 1s;
     animation-timing-function: ease-out;
     /*
@@ -37,15 +37,15 @@ body {
 }
 
 .heading-tertiary {
-  font-size: clamp(14px, 1.4rem, 32px);
+  font-size: clamp(14px, 1.4rem, 32px); // Set default font size for tertiary headings
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .paragraph {
-  font-size: $default-font-size;
+  font-size: $default-font-size; // Set default font size for paragraphs in _variables.scss
 
-  &:not(:last-child) {
+  &:not(:last-child) { // Select all paragraphs except the last one
     margin-bottom: 2.38rem;
   }
 }
