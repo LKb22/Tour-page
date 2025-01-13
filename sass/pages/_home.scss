@@ -2,7 +2,7 @@
   scroll-snap-align: center;
   background-color: $color-grey-light-1;
   padding: 19em 5rem; // Adjusted padding
-  margin-top: -11rem; // Adjusted margin-top
+  margin-top: -14rem; // Adjusted margin-top
 
   @include respond(moniter-ultrawide) {
     padding: 25em 5rem;
@@ -18,7 +18,7 @@
   url(../img/nat-4.jpg);
   background-size: cover;
   padding: 19rem 5rem; // Adjusted padding
-  margin-top: -7rem; // Adjusted margin-top
+  margin-top: -9rem; // Adjusted margin-top
 
   @include respond(moniter-ultrawide) {
     padding: 25em 5rem;
@@ -44,7 +44,7 @@
   scroll-snap-align: center;
   background-color: $color-grey-light-1;
   padding: 19rem 5rem 9rem 5rem; // Adjusted padding
-  margin-top: -7rem; // Adjusted margin-top
+  margin-top: -9rem; // Adjusted margin-top
 
   @include respond(moniter-ultrawide) {
     padding: 25em 5rem;

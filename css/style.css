@@ -845,7 +845,7 @@ body {
     text-align: center; }
 
 .heading-secondary {
-  font-size: clamp(16px, 3rem, 66px);
+  font-size: clamp(18px, 3rem, 66px);
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
@@ -984,14 +984,14 @@ body {
   scroll-snap-align: center;
   background-color: #f7f7f7;
   padding: 19em 5rem;
-  margin-top: -11rem; }
+  margin-top: -14rem; }
 
 .section-features {
   scroll-snap-align: center;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
   padding: 19rem 5rem;
-  margin-top: -7rem;
+  margin-top: -9rem;
   transform: skewY(-6deg); }
   .section-features > * {
     transform: skewY(6deg); }
@@ -1005,7 +1005,7 @@ body {
   scroll-snap-align: center;
   background-color: #f7f7f7;
   padding: 19rem 5rem 9rem 5rem;
-  margin-top: -7rem; }
+  margin-top: -9rem; }
 
 .section-stories {
   scroll-snap-align: center;
