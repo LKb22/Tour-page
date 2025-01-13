@@ -41,6 +41,10 @@
     display: table-cell;
     vertical-align: middle;
     padding: 2.38rem 3.96rem;
+
+    .heading-secondary {
+      padding: 0;
+    }
   }
 
   &__img {

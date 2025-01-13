@@ -96,10 +96,6 @@ html {
 body {
   box-sizing: border-box; // Allows for padding and border to be included in the width
   padding: 2.38rem; // Border around the whole edge of the page
-
-  @include respond(tablet-portrait-2) {
-    padding: 0rem; // Remove padding starting at 900px
-  }
 }
 
 ::selection {

@@ -85,9 +85,6 @@ html {
 body {
   box-sizing: border-box;
   padding: 2.38rem; }
-  @media only screen and (max-width: 56.25em) {
-    body {
-      padding: 0rem; } }
 
 ::selection {
   background-color: #55c57a;
@@ -299,7 +296,9 @@ body {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px;
-    border-top-right-radius: 3px; }
+    border-top-right-radius: 3px;
+    background-size: cover;
+    background-position: left center; }
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(/img/nat-5.jpg); }
     .card__picture--2 {
@@ -313,8 +312,8 @@ body {
     text-align: right;
     color: white;
     position: absolute;
-    top: 9.51rem;
-    left: 1.58rem;
+    top: 15rem;
+    left: 4rem;
     width: 75%; }
   .card__heading-span {
     padding: 0.79rem 1.19rem;
@@ -382,6 +381,21 @@ body {
         padding: 5.56rem 3.17rem 3.17rem 3.17rem; }
       .card__price-box {
         margin-bottom: 3rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .card__heading {
+      top: 15rem;
+      left: 22rem;
+      width: 45%; } }
+  @media only screen and (max-width: 35em) {
+    .card__heading {
+      top: 13rem;
+      left: 12rem;
+      width: 55%; } }
+  @media only screen and (max-width: 30em) {
+    .card__heading {
+      top: 13rem;
+      left: 10rem;
+      width: 55%; } }
 
 .composition {
   position: relative; }
@@ -404,14 +418,14 @@ body {
       @media only screen and (max-width: 56.25em) {
         .composition__photo--p1 {
           top: 0;
-          transform: scale(1.2); } }
+          transform: scale(1.02); } }
     .composition__photo--p2 {
       right: 0;
       top: 1.58rem; }
       @media only screen and (max-width: 56.25em) {
         .composition__photo--p2 {
           top: -0.79rem;
-          transform: scale(1.3);
+          transform: scale(1.03);
           z-index: 100; } }
     .composition__photo--p3 {
       left: 15.86%;
@@ -420,16 +434,15 @@ body {
         .composition__photo--p3 {
           top: 0.79rem;
           left: 0;
-          transform: scale(1.1); } }
+          transform: scale(1.01); } }
     .composition__photo:hover {
       outline: 1.5rem solid #55c57a;
       transform: scale(1.05) translateY(-0.39rem);
       box-shadow: 0 1.98rem 3.17rem rgba(0, 0, 0, 0.5);
-      z-index: 20; }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95); }
+      z-index: 120; }
 
 .feature-box {
+  height: 30rem;
   background-color: rgba(255, 255, 255, 0.8);
   font-size: clamp(12px, 1.27rem, 28px);
   padding: 1.98rem;
@@ -437,6 +450,9 @@ body {
   border-radius: 3px;
   box-shadow: 0 1.19rem 3.17rem rgba(0, 0, 0, 0.15);
   transition: transform 0.2s; }
+  @media only screen and (max-width: 56.25em) {
+    .feature-box {
+      height: auto; } }
   .feature-box__icon {
     font-size: clamp(34px, 5rem, 110px);
     margin-bottom: 0.4rem;
@@ -573,6 +589,8 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding: 2.38rem 3.96rem; }
+    .popup__right .heading-secondary {
+      padding: 0; }
   .popup__img {
     display: block;
     width: 100%; }
@@ -760,8 +778,7 @@ body {
       max-width: 85rem; } }
   @media only screen and (max-width: 56.25em) {
     .row {
-      max-width: 80rem;
-      padding: 0; } }
+      max-width: 75rem; } }
   @media only screen and (max-width: 48em) {
     .row {
       max-width: 70rem; } }
@@ -1005,20 +1022,20 @@ body {
 .section-about {
   scroll-snap-align: center;
   background-color: #f7f7f7;
-  padding: 18rem 0;
+  padding: 18rem 5rem;
   margin-top: -15.86rem; }
-  @media only screen and (max-width: 48em) {
-    .section-about {
-      padding: 16rem 0;
-      margin-top: -10rem; } }
   @media only screen and (max-width: 56.25em) {
     .section-about {
-      padding: 17rem 0;
+      padding: 17rem 3rem;
       margin-top: -13rem; } }
+  @media only screen and (max-width: 48em) {
+    .section-about {
+      padding: 16rem 3rem;
+      margin-top: -10rem; } }
 
 .section-features {
   scroll-snap-align: center;
-  padding: 15.86rem 0;
+  padding: 15.86rem 5rem;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
   margin-top: -7.93rem;
@@ -1032,12 +1049,12 @@ body {
         transform: skewY(5deg); } }
   @media only screen and (max-width: 48em) {
     .section-features {
-      padding: 7.93rem 0; } }
+      padding: 7.93rem 5rem; } }
 
 .section-tours {
   scroll-snap-align: center;
   background-color: #f7f7f7;
-  padding: 18rem 0 9rem 0;
+  padding: 18rem 5rem 9rem 5rem;
   margin-top: -10rem; }
   @media only screen and (max-width: 48em) {
     .section-tours {
@@ -1046,18 +1063,18 @@ body {
 .section-stories {
   scroll-snap-align: center;
   position: relative;
-  padding: 9rem 0; }
+  padding: 9rem 5rem; }
   @media only screen and (max-width: 48em) {
     .section-stories {
-      padding: 7.93rem 0; } }
+      padding: 7.93rem 3rem; } }
 
 .section-book {
   scroll-snap-align: center;
-  padding: 11.9rem 0;
+  padding: 11.9rem 5rem;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
   @media only screen and (max-width: 56.25em) {
     .section-book {
-      padding: 7.93rem 0; } }
+      padding: 7.93rem 3rem; } }
   .section-book .book {
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(/img/nat-10.jpg);
     background-size: 100%;

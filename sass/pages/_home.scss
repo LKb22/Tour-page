@@ -1,23 +1,24 @@
 .section-about {
   scroll-snap-align: center;
   background-color: $color-grey-light-1;
-  padding: 18rem 0; // Adjusted padding
+  padding: 18rem 5rem; // Adjusted padding
   margin-top: -15.86rem; // Adjusted margin-top
 
+  @include respond(tablet-portrait-2) {
+    padding: 17rem 3rem;
+    margin-top: -13rem
+  }
+
   @include respond(tablet-portrait) {
-    padding: 16rem 0; // Adjusted padding for tablet
+    padding: 16rem 3rem; // Adjusted padding for tablet
     margin-top: -10rem
   }
 
-  @include respond(tablet-portrait-2) {
-    padding: 17rem 0;
-    margin-top: -13rem
-  }
 }
 
 .section-features {
   scroll-snap-align: center;
-  padding: 15.86rem 0; // Adjusted padding
+  padding: 15.86rem 5rem; // Adjusted padding
   background-image: linear-gradient(to right bottom,
     rgba($color-primary-light, 0.8),
     rgba($color-primary-dark, 0.8)),
@@ -41,14 +42,14 @@
 
 
   @include respond(tablet-portrait) {
-    padding: 7.93rem 0; // Adjusted padding for tablet
+    padding: 7.93rem 5rem; // Adjusted padding for tablet
   }
 }
 
 .section-tours {
   scroll-snap-align: center;
   background-color: $color-grey-light-1;
-  padding: 18rem 0 9rem 0; // Adjusted padding
+  padding: 18rem 5rem 9rem 5rem; // Adjusted padding
   margin-top: -10rem; // Adjusted margin-top
 
   @include respond(tablet-portrait) {
@@ -59,20 +60,20 @@
 .section-stories {
   scroll-snap-align: center;
   position: relative;
-  padding: 9rem 0; // Adjusted padding
+  padding: 9rem 5rem; // Adjusted padding
 
   @include respond(tablet-portrait) {
-    padding: 7.93rem 0; // Adjusted padding for tablet
+    padding: 7.93rem 3rem; // Adjusted padding for tablet
   }
 }
 
 .section-book {
   scroll-snap-align: center;
-  padding: 11.9rem 0; // Adjusted padding
+  padding: 11.9rem 5rem; // Adjusted padding
   background-image: $background-gradient-primary;
 
   @include respond(tablet-portrait-2) {
-    padding: 7.93rem 0; // Adjusted padding for tablet
+    padding: 7.93rem 3rem; // Adjusted padding for tablet
   }
 
   .book {
@@ -113,7 +114,6 @@
       @include respond(tablet-portrait) {
         width: 100%; // Adjusted width for portrait
       }
-
     }
   }
 }

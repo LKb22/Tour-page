@@ -22,7 +22,7 @@
 
       @include respond(tablet-portrait-2) {
         top: 0;
-        transform: scale(1.2);
+        transform: scale(1.02);
       }
     }
 
@@ -32,7 +32,7 @@
 
       @include respond(tablet-portrait-2) {
         top: -0.79rem;
-        transform: scale(1.3);
+        transform: scale(1.03);
         z-index: 100;
       }
     }
@@ -44,7 +44,7 @@
       @include respond(tablet-portrait-2) {
         top: 0.79rem;
         left: 0;
-        transform: scale(1.1);
+        transform: scale(1.01);
       }
     }
 
@@ -52,11 +52,11 @@
       outline: 1.5rem solid $color-primary; //Use instead of border so outline-offset can be used to create a space between the outline and the element
       transform: scale(1.05) translateY(-0.39rem);
       box-shadow: 0 1.98rem 3.17rem rgba($color-black, .5); // Shadow should get bigger when element gets bigger with transform
-      z-index: 20; // Bring hovered element to the front by adding a higher z-index
+      z-index: 120; // Bring hovered element to the front by adding a higher z-index
     }
   }
 
   &:hover &__photo:not(:hover) { // Select all the photos in the composition that are not being hovered, and shrink them
-    transform: scale(0.95);
+
   }
 }

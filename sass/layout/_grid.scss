@@ -7,8 +7,7 @@
   }
 
   @include respond(tablet-portrait-2) {
-    max-width: 80rem;
-    padding: 0;
+    max-width: 75rem;
   }
 
   @include respond(tablet-portrait) {

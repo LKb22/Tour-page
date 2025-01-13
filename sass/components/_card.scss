@@ -58,6 +58,8 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px; // Clip path might break overflow, so re-set radius to align top corner radiuses of card and image
     border-top-right-radius: 3px;
+    background-size: cover;
+    background-position: left center;
 
     &--1 {
       background-image: $background-gradient-secondary,
@@ -82,8 +84,8 @@
     text-align: right;
     color: $color-white;
     position: absolute;
-    top: 9.51rem;
-    left: 1.58rem;
+    top: 15rem;
+    left: 4rem;
     width: 75%; // To make the heading take up 75% of the card's width
   }
 
@@ -192,6 +194,33 @@
 
     &__price-box {
       margin-bottom: 3rem;
+    }
+  }
+
+  @media only screen and (max-width: 56.25em) {
+
+    &__heading {
+      top: 15rem;
+      left: 22rem;
+      width: 45%; // To make the heading take up 75% of the card's width
+    }
+  }
+
+  @media only screen and (max-width: 35em) {
+
+    &__heading {
+      top: 13rem;
+      left: 12rem;
+      width: 55%; // To make the heading take up 75% of the card's width
+    }
+  }
+
+  @media only screen and (max-width: 30em) {
+
+    &__heading {
+      top: 13rem;
+      left: 10rem;
+      width: 55%; // To make the heading take up 75% of the card's width
     }
   }
 }
