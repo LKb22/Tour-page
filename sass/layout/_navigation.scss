@@ -1,15 +1,17 @@
+// Use a checkbox to create a button that opens the navigation menu when clicked.
 .navigation {
   &__checkbox {
-    display: none;
+    display: none; // Hide checkbox
   }
 
+  // Style the button
   &__button {
     background-color: $color-white;
-    height: 5.55rem; // Adjusted height
-    width: 5.55rem; // Adjusted width
+    height: 5.55rem;
+    width: 5.55rem;
     position: fixed;
-    top: 4.76rem; // Adjusted top position
-    right: 4.76rem; // Adjusted right position
+    top: 4.76rem;
+    right: 4.76rem;
     border-radius: 50%;
     z-index: 2000;
     box-shadow: 0 1rem 3rem $box-shadow-color;
@@ -22,15 +24,16 @@
     }
   }
 
+  // Style the background of the navigation menu. The background starts as a circle hidden behind the button.
   &__background {
-    height: 4.76rem; // Adjusted height
-    width: 4.76rem; // Adjusted width
+    height: 4.76rem;
+    width: 4.76rem;
     border-radius: 50%;
     position: fixed;
-    top: 5.16rem; // Adjusted top position
-    right: 5.16rem; // Adjusted right position
+    top: 5.16rem;
+    right: 5.16rem;
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
-    z-index: 1000;
+    z-index: 1000; // Lower z-index than the button to hide it
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 
     @include respond(tablet-portrait-2) {
@@ -39,18 +42,20 @@
     }
   }
 
+  // Nav is the actual navigation menu
   &__nav {
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1500;
-    opacity: 0;
+    z-index: 1500; // Higher z-index than the background but less than the button
+    opacity: 0; // Hidden by default
     visibility: hidden;
     width: 0;
     transition: all .8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
 
+  // List of navigation items, centered
   &__list {
     @include absCenter;
     list-style: none;
@@ -62,38 +67,43 @@
     margin: 1rem;
   }
 
+  // Style the links
   &__link {
     &:link,
     &:visited {
       display: inline-block;
-      font-size: clamp(14px, 2.38rem, 54px); // Adjusted font size
+      font-size: clamp(14px, 2.38rem, 54px);
       font-weight: 300;
-      padding: 0.79rem 1.58rem; // Adjusted padding
+      padding: 0.79rem 1.58rem;
       color: $color-white;
       text-decoration: none;
       text-transform: uppercase;
-      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
-      background-size: 250%;
-      transition: all .4s;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%); // Background gradient for the hover effect. The gradient is transparent on the left side and white on the right side
+      background-size: 250%; // Background size is 250% so that only the left transparent side is visible in the initial state (100% would be half transparent and half white)(250% instead of just 200 to cover excess created by 120deg angle)
+      transition: all .4s; // Transition for the hover effect
 
+      // Span for the menu list numbers
       span {
-        margin-right: 1.19rem; // Adjusted margin-right
-        display: inline-block;
+        margin-right: 1.19rem;
+        display: inline-block; // To appear on the same line / next to the link
       }
     }
 
+    // On hover and active, shrink the background gradient so that the right white side becomes visible
     &:hover,
     &:active {
-      background-position: 100%;
+      background-position: 100%; // Move position to 100% to show the white side
       color: $color-primary;
-      transform: translateX(1rem);
+      transform: translateX(1rem); // Move the text to the right to add a little animation
     }
   }
 
+  // When the checkbox is checked, scale the background to 80 times its size to cover the whole screen (it is hidden behind the button initially)
   &__checkbox:checked ~ &__background {
     transform: scale(80);
   }
 
+  // When the checkbox is checked, show the navigation menu
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     visibility: visible;
@@ -102,34 +112,37 @@
 
   &__icon {
     position: relative;
-    margin-top: 2.78rem; // Adjusted margin-top
+    margin-top: 2.78rem;
 
+    // Style the icon, before, and after pseudo-elements to create the three lines of the hamburger menu
     &,
     &::before,
     &::after {
-      width: 2.38rem; // Adjusted width
-      height: 1.58px; // Adjusted height
+      width: 2.38rem;
+      height: 1.58px;
       background-color: $color-grey-dark-3;
       display: inline-block;
     }
 
+    // Position the before and after pseudo-elements to create the hamburger menu out of the three lines
     &::before,
     &::after {
-      content: "";
+      content: ""; // Required for pseudo-elements
       position: absolute;
       left: 0;
       transition: all .2s;
     }
 
     &::before {
-      top: -0.63rem; // Adjusted top position
+      top: -0.63rem;
     }
 
     &::after {
-      top: 0.63rem; // Adjusted top position
+      top: 0.63rem;
     }
   }
 
+  // On hover, create an animation effect to increase the space between the three lines of the hamburger menu
   &__button:hover &__icon::before {
     top: -1rem;
   }
@@ -138,10 +151,13 @@
     top: 1rem;
   }
 
+  // When the checkbox is checked, create an animation effect to rotate the lines of the hamburger menu to form an X
+  // Middle line disappears
   &__checkbox:checked + &__button &__icon {
     background-color: transparent;
   }
 
+  // Top and bottom lines rotate to form an X
   &__checkbox:checked + &__button &__icon::before {
     top: 0;
     transform: rotate(135deg);

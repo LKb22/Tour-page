@@ -1,8 +1,8 @@
 .section-about {
   scroll-snap-align: center;
   background-color: $color-grey-light-1;
-  padding: 19em 5rem; // Adjusted padding
-  margin-top: -14rem; // Adjusted margin-top
+  padding: 19em 5rem;
+  margin-top: -14rem;
 
   @include respond(moniter-ultrawide) {
     padding: 25em 5rem;
@@ -17,8 +17,8 @@
   rgba($color-primary-dark, 0.8)),
   url(../img/nat-4.jpg);
   background-size: cover;
-  padding: 19rem 5rem; // Adjusted padding
-  margin-top: -9rem; // Adjusted margin-top
+  padding: 19rem 5rem;
+  margin-top: -9rem;
 
   @include respond(moniter-ultrawide) {
     padding: 25em 5rem;
@@ -43,8 +43,8 @@
 .section-tours {
   scroll-snap-align: center;
   background-color: $color-grey-light-1;
-  padding: 19rem 5rem 9rem 5rem; // Adjusted padding
-  margin-top: -9rem; // Adjusted margin-top
+  padding: 19rem 5rem 9rem 5rem;
+  margin-top: -9rem;
 
   @include respond(moniter-ultrawide) {
     padding: 25em 5rem;
@@ -55,12 +55,12 @@
 .section-stories {
   scroll-snap-align: center;
   position: relative;
-  padding: 9rem 5rem; // Adjusted padding
+  padding: 9rem 5rem;
 }
 
 .section-book {
   scroll-snap-align: center;
-  padding: 9rem 5rem; // Adjusted padding
+  padding: 9rem 5rem;
   background-image: $background-gradient-primary;
 
   .book {
@@ -91,15 +91,15 @@
     }
 
     &__form {
-      width: 50%; // Adjusted width
+      width: 50%;
       padding: 4.758rem;
 
       @include respond(tablet-portrait-2) {
-        width: 59%; // Adjusted width for phone
+        width: 59%;
       }
 
       @include respond(tablet-portrait) {
-        width: 100%; // Adjusted width for portrait
+        width: 100%;
       }
     }
   }
@@ -109,6 +109,6 @@
 .section-book {
 
   @include respond(tablet-portrait) {
-    padding: 7.93rem 3rem; // Adjusted padding for tablet
+    padding: 7.93rem 3rem;
   }
 }

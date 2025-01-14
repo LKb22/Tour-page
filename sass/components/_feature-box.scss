@@ -1,26 +1,39 @@
 .feature-box {
-  height: 33rem; // Height to keep even boxes
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 28rem;
   background-color: rgba($color-white, 0.8);
   font-size: $default-font-size;
-  padding: 1.98rem;
+  padding: 1.98rem 3rem;
   text-align: center;
   border-radius: 3px;
   box-shadow: 0 1.19rem 3.17rem rgba($color-black, .15);
   transition: transform 0.2s;
 
-  @include respond(tablet-portrait-2) {
+  @include respond(laptop) {
     height: auto; // Height to auto adjust boxes now that they are single column
   }
 
   &__icon {
     font-size: clamp(34px, 5rem, 110px);
-    margin-bottom: 0.4rem;
     display: inline-block;
     background-image: linear-gradient(to right,
-      $color-primary-light,
-      $color-primary-dark);
+    $color-primary-light,
+    $color-primary-dark);
     -webkit-background-clip: text;
     color: transparent;
+  }
+
+  // Allow for a line wrap on the heading without breaking the layout / pushing the text down
+  .heading-tertiary {
+    height: 3.6rem; // Height for two lines
+    line-height: 1.8rem;
+    align-content: center; // Center text vertically
+  }
+
+  &__text {
+    font-size: clamp(14px, 1.4rem, 32px);
   }
 
   &:hover {

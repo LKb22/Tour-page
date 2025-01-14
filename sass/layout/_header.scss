@@ -1,32 +1,35 @@
 .header {
-  height: 85vh;
+  height: 85vh; // Limit header height
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top center;
   position: relative;
 
+  // When clip-path or webkit-clip-path is supported, use it
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // Adjusted height for clip-path
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // Adjusted height for clip-path
-    height: 90vh; // Adjusted height
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 90vh;
   }
 
+  // For high resolution screens above a min width, or for all screens above a min. width, use a larger image
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
     only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
     only screen and (min-width: 125em) {
       background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
   }
 
+  // Lower clip-path effect of smaller screens
   @include respond(tablet-portrait-2) {
-    height: 75vh; // Adjusted height
+    height: 75vh;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   }
 
   &__logo-box {
     position: absolute;
-    top: 3.17rem; // Adjusted top position
-    left: 3.17rem; // Adjusted left position
+    top: 3.17rem;
+    left: 3.17rem;
   }
 
   &__logo {
@@ -35,7 +38,7 @@
 
   &__text-box {
     position: absolute;
-    top: 40%;
+    top: 40%; // Shifted up slightly
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -43,17 +46,17 @@
 }
 
 .heading-secondary {
-  font-size: clamp(18px, 3rem, 66px); // Adjusted font size based on scaling factor
+  font-size: clamp(18px, 3rem, 66px);
   text-transform: uppercase;
   font-weight: 700;
-  display: inline-block;
+  display: inline-block; //
   background-image: linear-gradient(to right,
     $color-primary-light,
     $color-primary-dark);
   -webkit-background-clip: text;
   color: transparent;
-  letter-spacing: 0.158rem; // Adjusted letter-spacing
-  padding: 0 2.1rem; // Adjusted padding
+  letter-spacing: 0.158rem;
+  padding: 0 2.1rem;
   transition: all 0.2s;
 
   &:hover {
